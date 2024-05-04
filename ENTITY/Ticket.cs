@@ -8,5 +8,13 @@ namespace ENTITY
 {
     public class Ticket
     {
+        public int id { get; set; }
+        public DateTime horaEmitido { get; set; }
+
+        public Ticket(int id, DateTime horaEmitido)
+        {
+            this.id = id;
+            this.horaEmitido = horaEmitido;
+        }
     }
 }

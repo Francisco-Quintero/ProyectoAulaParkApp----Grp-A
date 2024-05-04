@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FraccionDeHora.cs" />
+    <Compile Include="HoraCompleta.cs" />
     <Compile Include="Parqueo.cs" />
     <Compile Include="Tarifa.cs" />
     <Compile Include="Ticket.cs" />
