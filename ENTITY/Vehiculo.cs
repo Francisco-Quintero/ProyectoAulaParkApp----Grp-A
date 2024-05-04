@@ -16,5 +16,9 @@ namespace ENTITY
             this.placa = placa;
             this.tipoVehiculo = tipoVehiculo;
         }
+
+        public Vehiculo()
+        {
+        }
     }
 }
