@@ -49,11 +49,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label2.Location = new System.Drawing.Point(267, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 21);
+            this.label2.Size = new System.Drawing.Size(170, 19);
             this.label2.TabIndex = 42;
             this.label2.Text = "SELECCIONE FECHA";
             // 
@@ -69,11 +69,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Location = new System.Drawing.Point(267, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 21);
+            this.label1.Size = new System.Drawing.Size(58, 22);
             this.label1.TabIndex = 40;
             this.label1.Text = "Filtros";
             // 
@@ -85,7 +85,7 @@
             this.dataGridEntradas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -170,11 +170,11 @@
             // 
             this.lblSalidas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSalidas.AutoSize = true;
-            this.lblSalidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalidas.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblSalidas.Location = new System.Drawing.Point(403, 204);
             this.lblSalidas.Name = "lblSalidas";
-            this.lblSalidas.Size = new System.Drawing.Size(372, 36);
+            this.lblSalidas.Size = new System.Drawing.Size(392, 36);
             this.lblSalidas.TabIndex = 38;
             this.lblSalidas.Text = "SALIDAS DE VEHICULOS";
             // 

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelArriba = new System.Windows.Forms.Panel();
             this.lblfecha = new System.Windows.Forms.Label();
             this.btnCerrarL = new System.Windows.Forms.PictureBox();
             this.btnMinizarL = new System.Windows.Forms.PictureBox();
@@ -42,31 +42,35 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelArriba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizarL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelArriba
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(70)))));
-            this.panel1.Controls.Add(this.lblfecha);
-            this.panel1.Controls.Add(this.btnCerrarL);
-            this.panel1.Controls.Add(this.btnMinizarL);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(497, 50);
-            this.panel1.TabIndex = 2;
+            this.panelArriba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(70)))));
+            this.panelArriba.Controls.Add(this.lblfecha);
+            this.panelArriba.Controls.Add(this.btnCerrarL);
+            this.panelArriba.Controls.Add(this.btnMinizarL);
+            this.panelArriba.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelArriba.Location = new System.Drawing.Point(0, 0);
+            this.panelArriba.Name = "panelArriba";
+            this.panelArriba.Size = new System.Drawing.Size(497, 50);
+            this.panelArriba.TabIndex = 2;
+            this.panelArriba.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArriba_Paint);
+            this.panelArriba.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelArriba_MouseDown);
             // 
             // lblfecha
             // 
             this.lblfecha.AutoSize = true;
-            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblfecha.Location = new System.Drawing.Point(3, 22);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(64, 25);
+            this.lblfecha.Size = new System.Drawing.Size(70, 23);
             this.lblfecha.TabIndex = 14;
             this.lblfecha.Text = "label3";
             // 
@@ -105,11 +109,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(45, 360);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 23);
+            this.label2.Size = new System.Drawing.Size(143, 23);
             this.label2.TabIndex = 12;
             this.label2.Text = "CONTRASEÑA";
             // 
@@ -126,22 +130,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(45, 257);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 23);
+            this.label1.Size = new System.Drawing.Size(96, 23);
             this.label1.TabIndex = 10;
             this.label1.Text = "USUARIO";
             // 
             // lblhora
             // 
             this.lblhora.AutoSize = true;
-            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblhora.Location = new System.Drawing.Point(114, 568);
+            this.lblhora.Location = new System.Drawing.Point(132, 571);
             this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(126, 46);
+            this.lblhora.Size = new System.Drawing.Size(140, 47);
             this.lblhora.TabIndex = 15;
             this.lblhora.Text = "label3";
             // 
@@ -160,7 +164,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(49, 459);
             this.btnLogin.Name = "btnLogin";
@@ -175,12 +179,23 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ParkApp.Properties.Resources.parkAPP1final;
+            this.pictureBox1.Location = new System.Drawing.Point(187, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(141, 154);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(29)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(497, 669);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblhora);
             this.Controls.Add(this.panel2);
@@ -188,14 +203,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelArriba);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelArriba.ResumeLayout(false);
+            this.panelArriba.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizarL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +219,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelArriba;
         private System.Windows.Forms.Label lblfecha;
         private System.Windows.Forms.PictureBox btnCerrarL;
         private System.Windows.Forms.PictureBox btnMinizarL;
@@ -215,6 +231,7 @@
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

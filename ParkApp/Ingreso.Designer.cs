@@ -49,11 +49,11 @@
             // 
             this.lblfecha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblfecha.AutoSize = true;
-            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblfecha.Location = new System.Drawing.Point(214, 389);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(162, 51);
+            this.lblfecha.Size = new System.Drawing.Size(169, 52);
             this.lblfecha.TabIndex = 38;
             this.lblfecha.Text = "label13";
             // 
@@ -61,11 +61,11 @@
             // 
             this.lblhora.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblhora.AutoSize = true;
-            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblhora.Location = new System.Drawing.Point(503, 272);
             this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(162, 51);
+            this.lblhora.Size = new System.Drawing.Size(169, 52);
             this.lblhora.TabIndex = 37;
             this.lblhora.Text = "label13";
             // 
@@ -73,7 +73,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Silver;
             this.label12.Location = new System.Drawing.Point(429, 284);
             this.label12.Name = "label12";
@@ -85,11 +85,11 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Silver;
             this.label11.Location = new System.Drawing.Point(219, 346);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 23);
+            this.label11.Size = new System.Drawing.Size(75, 23);
             this.label11.TabIndex = 35;
             this.label11.Text = "FECHA";
             // 
@@ -134,7 +134,7 @@
             this.btnticket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
             this.btnticket.FlatAppearance.BorderSize = 0;
             this.btnticket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnticket.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnticket.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnticket.ForeColor = System.Drawing.Color.White;
             this.btnticket.Location = new System.Drawing.Point(223, 464);
             this.btnticket.Name = "btnticket";
@@ -148,11 +148,11 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Silver;
             this.label10.Location = new System.Drawing.Point(328, 54);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(180, 44);
+            this.label10.Size = new System.Drawing.Size(177, 44);
             this.label10.TabIndex = 32;
             this.label10.Text = "INGRESO";
             // 
@@ -160,11 +160,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(219, 207);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 23);
+            this.label2.Size = new System.Drawing.Size(187, 23);
             this.label2.TabIndex = 31;
             this.label2.Text = "TIPO DE VEHICULO";
             // 
@@ -183,11 +183,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(219, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 23);
+            this.label1.Size = new System.Drawing.Size(76, 23);
             this.label1.TabIndex = 29;
             this.label1.Text = "PLACA";
             // 
