@@ -34,8 +34,8 @@ namespace ParkApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblhora.Text = DateTime.Now.ToLongTimeString();
-            lblfecha.Text = DateTime.Now.ToShortDateString();
+            lblhoraLogin.Text = DateTime.Now.ToLongTimeString();
+            lblfechaLogin.Text = DateTime.Now.ToShortDateString();
 
         }
 

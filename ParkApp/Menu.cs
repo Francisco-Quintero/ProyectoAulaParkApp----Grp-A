@@ -31,16 +31,40 @@ namespace ParkApp
         }
 
 
-        private void AbrirFormEnPanel(object Formhijo)
+        //private void AbrirFormEnPanel(object Formhijo)
+        //{
+        //    if (this.panelformularios.Controls.Count > 0)
+        //        this.panelformularios.Controls.RemoveAt(0);
+        //    Form fh = Formhijo as Form;
+        //    fh.TopLevel = false;
+        //    fh.Dock = DockStyle.Fill;
+        //    this.panelformularios.Controls.Add(fh);
+        //    this.panelformularios.Tag = fh;
+        //    fh.Show();
+        //}
+
+
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
-            if (this.panelContenedor.Controls.Count > 0)
-                this.panelContenedor.Controls.RemoveAt(0);
-            Form fh = Formhijo as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.panelContenedor.Controls.Add(fh);
-            this.panelContenedor.Tag = fh;
-            fh.Show();
+            Form formulario;
+            formulario = panelformularios.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
+                                                                                     //si el formulario/instancia no existe
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+                panelformularios.Controls.Add(formulario);
+                panelformularios.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+            }
+            //si el formulario/instancia existe
+            else
+            {
+                formulario.BringToFront();
+            }
         }
 
 
@@ -74,17 +98,20 @@ namespace ParkApp
 
         private void btnIngreso_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Ingreso());
+            //AbrirFormEnPanel(new Ingreso());
+            AbrirFormulario<Ingreso>();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new InformeSalidas());
+            //AbrirFormEnPanel(new InformeSalidas());
+            AbrirFormulario<InformeSalidas>();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Salidas());
+            //AbrirFormEnPanel(new Salidas());
+            AbrirFormulario<Salidas>();
         }
 
         private void dataGridEntradas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,7 +132,23 @@ namespace ParkApp
 
         private void btnHistorialIngresos_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new InformeIngresos());
+            //AbrirFormEnPanel(new InformeIngresos());
+            AbrirFormulario<InformeIngresos>();
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridEstacionados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void CBVehiculosEstacionados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

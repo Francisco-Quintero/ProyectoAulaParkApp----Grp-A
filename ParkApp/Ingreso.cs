@@ -34,5 +34,10 @@ namespace ParkApp
 
             form2.Show();
         }
+
+        private void btnCerrarPingreso_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

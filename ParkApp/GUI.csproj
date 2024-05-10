@@ -176,6 +176,10 @@
     <Content Include="Imagenes\icons8-usuario-100.png" />
     <Content Include="Imagenes\icons8-usuario-50.png" />
     <Content Include="Imagenes\icons8-usuario-90.png" />
+    <None Include="Resources\icons8-minimizar-la-ventana-50.png" />
+    <None Include="Resources\icons8-alternar-pantalla-completa-50.png" />
+    <None Include="Resources\icons8-minimizar-50.png" />
+    <None Include="Resources\icons8-eliminar-48.png" />
     <None Include="Resources\historial ingresos.png" />
     <None Include="Resources\HISTORIAL SALIDAS.png" />
     <None Include="Resources\salidas.png" />

@@ -42,7 +42,9 @@
             this.placa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnCerrarPingreso = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarPingreso)).BeginInit();
             this.SuspendLayout();
             // 
             // lblfecha
@@ -53,7 +55,7 @@
             this.lblfecha.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblfecha.Location = new System.Drawing.Point(214, 389);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(169, 52);
+            this.lblfecha.Size = new System.Drawing.Size(169, 51);
             this.lblfecha.TabIndex = 38;
             this.lblfecha.Text = "label13";
             // 
@@ -65,7 +67,7 @@
             this.lblhora.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblhora.Location = new System.Drawing.Point(503, 272);
             this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(169, 52);
+            this.lblhora.Size = new System.Drawing.Size(169, 51);
             this.lblhora.TabIndex = 37;
             this.lblhora.Text = "label13";
             // 
@@ -196,12 +198,25 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnCerrarPingreso
+            // 
+            this.btnCerrarPingreso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarPingreso.Image = global::ParkApp.Properties.Resources.icons8_eliminar_48;
+            this.btnCerrarPingreso.Location = new System.Drawing.Point(832, 12);
+            this.btnCerrarPingreso.Name = "btnCerrarPingreso";
+            this.btnCerrarPingreso.Size = new System.Drawing.Size(35, 35);
+            this.btnCerrarPingreso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrarPingreso.TabIndex = 39;
+            this.btnCerrarPingreso.TabStop = false;
+            this.btnCerrarPingreso.Click += new System.EventHandler(this.btnCerrarPingreso_Click);
+            // 
             // Ingreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
             this.ClientSize = new System.Drawing.Size(879, 588);
+            this.Controls.Add(this.btnCerrarPingreso);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.lblhora);
             this.Controls.Add(this.label12);
@@ -217,6 +232,7 @@
             this.Text = "Ingreso";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarPingreso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +253,6 @@
         private System.Windows.Forms.TextBox placa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox btnCerrarPingreso;
     }
 }
