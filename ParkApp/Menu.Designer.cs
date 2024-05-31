@@ -28,15 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BarraTitulo = new System.Windows.Forms.Panel();
             this.panelformularios = new System.Windows.Forms.Panel();
+            this.btnBuscarEstacionado = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBusquedaEstacionado = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dataGridEstacionados = new System.Windows.Forms.DataGridView();
+            this.PlacaEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDeVihiculoEstacionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaIngresoEstacionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraIngresoEstacionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CBVehiculosEstacionados = new System.Windows.Forms.ComboBox();
             this.lblEntradas = new System.Windows.Forms.Label();
             this.iconrestaurar = new System.Windows.Forms.PictureBox();
@@ -49,25 +58,16 @@
             this.btnSalida = new System.Windows.Forms.Button();
             this.bntHistorialSalidas = new System.Windows.Forms.Button();
             this.btnIngreso = new System.Windows.Forms.Button();
-            this.dataGridEstacionados = new System.Windows.Forms.DataGridView();
-            this.PlacaEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDeVihiculoEstacionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaIngresoEstacionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraIngresoEstacionado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtBusquedaEstacionado = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscarEstacionado = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
             this.panelformularios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEstacionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelarM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuEx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEstacionados)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -98,7 +98,7 @@
             // 
             // BarraTitulo
             // 
-            this.BarraTitulo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(197)))), ((int)(((byte)(189)))));
             this.BarraTitulo.Controls.Add(this.iconrestaurar);
             this.BarraTitulo.Controls.Add(this.pictureBox5);
             this.BarraTitulo.Controls.Add(this.iconmaximizar);
@@ -129,11 +129,146 @@
             this.panelformularios.TabIndex = 3;
             this.panelformularios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
+            // btnBuscarEstacionado
+            // 
+            this.btnBuscarEstacionado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscarEstacionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
+            this.btnBuscarEstacionado.FlatAppearance.BorderSize = 0;
+            this.btnBuscarEstacionado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarEstacionado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarEstacionado.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarEstacionado.Location = new System.Drawing.Point(344, 102);
+            this.btnBuscarEstacionado.Name = "btnBuscarEstacionado";
+            this.btnBuscarEstacionado.Size = new System.Drawing.Size(195, 35);
+            this.btnBuscarEstacionado.TabIndex = 57;
+            this.btnBuscarEstacionado.Text = "BUSCAR";
+            this.btnBuscarEstacionado.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(94, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 23);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Filtrar por tipo";
+            // 
+            // txtBusquedaEstacionado
+            // 
+            this.txtBusquedaEstacionado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBusquedaEstacionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txtBusquedaEstacionado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBusquedaEstacionado.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusquedaEstacionado.ForeColor = System.Drawing.Color.White;
+            this.txtBusquedaEstacionado.Location = new System.Drawing.Point(538, 36);
+            this.txtBusquedaEstacionado.Name = "txtBusquedaEstacionado";
+            this.txtBusquedaEstacionado.Size = new System.Drawing.Size(245, 23);
+            this.txtBusquedaEstacionado.TabIndex = 54;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(534, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(206, 23);
+            this.label11.TabIndex = 53;
+            this.label11.Text = "BUSCAR POR PLACA";
+            // 
+            // dataGridEstacionados
+            // 
+            this.dataGridEstacionados.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridEstacionados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
+            this.dataGridEstacionados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridEstacionados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEstacionados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridEstacionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridEstacionados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PlacaEntrada,
+            this.TipoDeVihiculoEstacionado,
+            this.FechaIngresoEstacionado,
+            this.HoraIngresoEstacionado});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridEstacionados.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridEstacionados.EnableHeadersVisualStyles = false;
+            this.dataGridEstacionados.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridEstacionados.Location = new System.Drawing.Point(146, 241);
+            this.dataGridEstacionados.Name = "dataGridEstacionados";
+            this.dataGridEstacionados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEstacionados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridEstacionados.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridEstacionados.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridEstacionados.RowTemplate.Height = 24;
+            this.dataGridEstacionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridEstacionados.Size = new System.Drawing.Size(768, 361);
+            this.dataGridEstacionados.TabIndex = 35;
+            this.dataGridEstacionados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEstacionados_CellContentClick);
+            // 
+            // PlacaEntrada
+            // 
+            this.PlacaEntrada.HeaderText = "Placa Del Vehiculo";
+            this.PlacaEntrada.MinimumWidth = 6;
+            this.PlacaEntrada.Name = "PlacaEntrada";
+            this.PlacaEntrada.Width = 125;
+            // 
+            // TipoDeVihiculoEstacionado
+            // 
+            this.TipoDeVihiculoEstacionado.HeaderText = "Tipo De Vehiculo";
+            this.TipoDeVihiculoEstacionado.MinimumWidth = 6;
+            this.TipoDeVihiculoEstacionado.Name = "TipoDeVihiculoEstacionado";
+            this.TipoDeVihiculoEstacionado.Width = 125;
+            // 
+            // FechaIngresoEstacionado
+            // 
+            this.FechaIngresoEstacionado.HeaderText = "Fecha De Ingreso";
+            this.FechaIngresoEstacionado.MinimumWidth = 6;
+            this.FechaIngresoEstacionado.Name = "FechaIngresoEstacionado";
+            this.FechaIngresoEstacionado.Width = 125;
+            // 
+            // HoraIngresoEstacionado
+            // 
+            this.HoraIngresoEstacionado.HeaderText = "Hora De Ingreso";
+            this.HoraIngresoEstacionado.MinimumWidth = 6;
+            this.HoraIngresoEstacionado.Name = "HoraIngresoEstacionado";
+            this.HoraIngresoEstacionado.Width = 125;
+            // 
             // CBVehiculosEstacionados
             // 
             this.CBVehiculosEstacionados.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CBVehiculosEstacionados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
             this.CBVehiculosEstacionados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CBVehiculosEstacionados.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBVehiculosEstacionados.ForeColor = System.Drawing.Color.White;
             this.CBVehiculosEstacionados.FormattingEnabled = true;
             this.CBVehiculosEstacionados.Items.AddRange(new object[] {
             "AUTOMOVILES",
@@ -141,7 +276,7 @@
             "TODOS"});
             this.CBVehiculosEstacionados.Location = new System.Drawing.Point(98, 35);
             this.CBVehiculosEstacionados.Name = "CBVehiculosEstacionados";
-            this.CBVehiculosEstacionados.Size = new System.Drawing.Size(245, 24);
+            this.CBVehiculosEstacionados.Size = new System.Drawing.Size(245, 26);
             this.CBVehiculosEstacionados.TabIndex = 37;
             this.CBVehiculosEstacionados.SelectedIndexChanged += new System.EventHandler(this.CBVehiculosEstacionados_SelectedIndexChanged);
             // 
@@ -150,7 +285,7 @@
             this.lblEntradas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEntradas.AutoSize = true;
             this.lblEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntradas.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblEntradas.ForeColor = System.Drawing.Color.White;
             this.lblEntradas.Location = new System.Drawing.Point(214, 190);
             this.lblEntradas.Name = "lblEntradas";
             this.lblEntradas.Size = new System.Drawing.Size(453, 36);
@@ -160,8 +295,8 @@
             // iconrestaurar
             // 
             this.iconrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconrestaurar.Image = global::ParkApp.Properties.Resources.icons8_minimizar_la_ventana_50;
-            this.iconrestaurar.Location = new System.Drawing.Point(879, 7);
+            this.iconrestaurar.Image = global::ParkApp.Properties.Resources.icons8_minimizar_la_ventana_50__1_;
+            this.iconrestaurar.Location = new System.Drawing.Point(879, 4);
             this.iconrestaurar.Name = "iconrestaurar";
             this.iconrestaurar.Size = new System.Drawing.Size(35, 35);
             this.iconrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -173,7 +308,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::ParkApp.Properties.Resources.icons8_minimizar_50;
+            this.pictureBox5.Image = global::ParkApp.Properties.Resources.icons8_minimizar_501;
             this.pictureBox5.Location = new System.Drawing.Point(838, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(35, 35);
@@ -185,7 +320,7 @@
             // iconmaximizar
             // 
             this.iconmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconmaximizar.Image = global::ParkApp.Properties.Resources.icons8_alternar_pantalla_completa_50;
+            this.iconmaximizar.Image = global::ParkApp.Properties.Resources.icons8_alternar_pantalla_completa_50__1_;
             this.iconmaximizar.Location = new System.Drawing.Point(879, 3);
             this.iconmaximizar.Name = "iconmaximizar";
             this.iconmaximizar.Size = new System.Drawing.Size(35, 35);
@@ -197,7 +332,7 @@
             // btnCancelarM
             // 
             this.btnCancelarM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelarM.Image = global::ParkApp.Properties.Resources.icons8_eliminar_48;
+            this.btnCancelarM.Image = global::ParkApp.Properties.Resources.eliminar_50;
             this.btnCancelarM.Location = new System.Drawing.Point(920, 3);
             this.btnCancelarM.Name = "btnCancelarM";
             this.btnCancelarM.Size = new System.Drawing.Size(35, 35);
@@ -305,138 +440,6 @@
             this.btnIngreso.UseVisualStyleBackColor = false;
             this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
-            // dataGridEstacionados
-            // 
-            this.dataGridEstacionados.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridEstacionados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
-            this.dataGridEstacionados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridEstacionados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEstacionados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridEstacionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridEstacionados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PlacaEntrada,
-            this.TipoDeVihiculoEstacionado,
-            this.FechaIngresoEstacionado,
-            this.HoraIngresoEstacionado});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridEstacionados.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridEstacionados.EnableHeadersVisualStyles = false;
-            this.dataGridEstacionados.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridEstacionados.Location = new System.Drawing.Point(146, 241);
-            this.dataGridEstacionados.Name = "dataGridEstacionados";
-            this.dataGridEstacionados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEstacionados.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridEstacionados.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridEstacionados.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridEstacionados.RowTemplate.Height = 24;
-            this.dataGridEstacionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridEstacionados.Size = new System.Drawing.Size(768, 361);
-            this.dataGridEstacionados.TabIndex = 35;
-            this.dataGridEstacionados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEstacionados_CellContentClick);
-            // 
-            // PlacaEntrada
-            // 
-            this.PlacaEntrada.HeaderText = "Placa Del Vehiculo";
-            this.PlacaEntrada.MinimumWidth = 6;
-            this.PlacaEntrada.Name = "PlacaEntrada";
-            this.PlacaEntrada.Width = 125;
-            // 
-            // TipoDeVihiculoEstacionado
-            // 
-            this.TipoDeVihiculoEstacionado.HeaderText = "Tipo De Vehiculo";
-            this.TipoDeVihiculoEstacionado.MinimumWidth = 6;
-            this.TipoDeVihiculoEstacionado.Name = "TipoDeVihiculoEstacionado";
-            this.TipoDeVihiculoEstacionado.Width = 125;
-            // 
-            // FechaIngresoEstacionado
-            // 
-            this.FechaIngresoEstacionado.HeaderText = "Fecha De Ingreso";
-            this.FechaIngresoEstacionado.MinimumWidth = 6;
-            this.FechaIngresoEstacionado.Name = "FechaIngresoEstacionado";
-            this.FechaIngresoEstacionado.Width = 125;
-            // 
-            // HoraIngresoEstacionado
-            // 
-            this.HoraIngresoEstacionado.HeaderText = "Hora De Ingreso";
-            this.HoraIngresoEstacionado.MinimumWidth = 6;
-            this.HoraIngresoEstacionado.Name = "HoraIngresoEstacionado";
-            this.HoraIngresoEstacionado.Width = 125;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Silver;
-            this.label11.Location = new System.Drawing.Point(534, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(206, 23);
-            this.label11.TabIndex = 53;
-            this.label11.Text = "BUSCAR POR PLACA";
-            // 
-            // txtBusquedaEstacionado
-            // 
-            this.txtBusquedaEstacionado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBusquedaEstacionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
-            this.txtBusquedaEstacionado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBusquedaEstacionado.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaEstacionado.Location = new System.Drawing.Point(538, 36);
-            this.txtBusquedaEstacionado.Name = "txtBusquedaEstacionado";
-            this.txtBusquedaEstacionado.Size = new System.Drawing.Size(245, 23);
-            this.txtBusquedaEstacionado.TabIndex = 54;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(94, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 23);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "Filtrar por tipo";
-            // 
-            // btnBuscarEstacionado
-            // 
-            this.btnBuscarEstacionado.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscarEstacionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.btnBuscarEstacionado.FlatAppearance.BorderSize = 0;
-            this.btnBuscarEstacionado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarEstacionado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarEstacionado.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarEstacionado.Location = new System.Drawing.Point(344, 102);
-            this.btnBuscarEstacionado.Name = "btnBuscarEstacionado";
-            this.btnBuscarEstacionado.Size = new System.Drawing.Size(195, 35);
-            this.btnBuscarEstacionado.TabIndex = 57;
-            this.btnBuscarEstacionado.Text = "BUSCAR";
-            this.btnBuscarEstacionado.UseVisualStyleBackColor = false;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -453,13 +456,13 @@
             this.BarraTitulo.ResumeLayout(false);
             this.panelformularios.ResumeLayout(false);
             this.panelformularios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEstacionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancelarM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenuEx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridEstacionados)).EndInit();
             this.ResumeLayout(false);
 
         }

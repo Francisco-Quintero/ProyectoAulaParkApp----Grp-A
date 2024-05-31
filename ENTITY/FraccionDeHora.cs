@@ -19,9 +19,9 @@ namespace ENTITY
         {
         }
 
-        public double calcularTarifa (double valorTarifa, double tiempoDeParqueo)
-        {
-            return valorTarifa * tiempoDeParqueo;
-        }
+        //public double calcularTarifa (double valorTarifa, double tiempoDeParqueo)
+        //{
+        //    return valorTarifa * tiempoDeParqueo;
+        //}
     }
 }

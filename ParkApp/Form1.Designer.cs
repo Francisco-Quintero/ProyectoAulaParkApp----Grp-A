@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelArriba = new System.Windows.Forms.Panel();
-            this.lblfechaLogin = new System.Windows.Forms.Label();
             this.btnCerrarL = new System.Windows.Forms.PictureBox();
             this.btnMinizarL = new System.Windows.Forms.PictureBox();
             this.txtcontraseña = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtusuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblhoraLogin = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelArriba.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarL)).BeginInit();
@@ -52,7 +48,6 @@
             // panelArriba
             // 
             this.panelArriba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(70)))));
-            this.panelArriba.Controls.Add(this.lblfechaLogin);
             this.panelArriba.Controls.Add(this.btnCerrarL);
             this.panelArriba.Controls.Add(this.btnMinizarL);
             this.panelArriba.Dock = System.Windows.Forms.DockStyle.Top;
@@ -62,17 +57,6 @@
             this.panelArriba.TabIndex = 2;
             this.panelArriba.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArriba_Paint);
             this.panelArriba.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelArriba_MouseDown);
-            // 
-            // lblfechaLogin
-            // 
-            this.lblfechaLogin.AutoSize = true;
-            this.lblfechaLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfechaLogin.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblfechaLogin.Location = new System.Drawing.Point(3, 22);
-            this.lblfechaLogin.Name = "lblfechaLogin";
-            this.lblfechaLogin.Size = new System.Drawing.Size(70, 23);
-            this.lblfechaLogin.TabIndex = 14;
-            this.lblfechaLogin.Text = "label3";
             // 
             // btnCerrarL
             // 
@@ -138,17 +122,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "USUARIO";
             // 
-            // lblhoraLogin
-            // 
-            this.lblhoraLogin.AutoSize = true;
-            this.lblhoraLogin.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblhoraLogin.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblhoraLogin.Location = new System.Drawing.Point(132, 571);
-            this.lblhoraLogin.Name = "lblhoraLogin";
-            this.lblhoraLogin.Size = new System.Drawing.Size(140, 47);
-            this.lblhoraLogin.TabIndex = 15;
-            this.lblhoraLogin.Text = "label3";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(38)))), ((int)(((byte)(70)))));
@@ -166,18 +139,13 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(49, 459);
+            this.btnLogin.Location = new System.Drawing.Point(39, 482);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(403, 70);
             this.btnLogin.TabIndex = 20;
             this.btnLogin.Text = "INGRESAR";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox1
             // 
@@ -197,7 +165,6 @@
             this.ClientSize = new System.Drawing.Size(497, 669);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.lblhoraLogin);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtcontraseña);
             this.Controls.Add(this.label2);
@@ -206,9 +173,9 @@
             this.Controls.Add(this.panelArriba);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panelArriba.ResumeLayout(false);
-            this.panelArriba.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinizarL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -220,17 +187,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panelArriba;
-        private System.Windows.Forms.Label lblfechaLogin;
         private System.Windows.Forms.PictureBox btnCerrarL;
         private System.Windows.Forms.PictureBox btnMinizarL;
         private System.Windows.Forms.TextBox txtcontraseña;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtusuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblhoraLogin;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

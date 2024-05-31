@@ -32,12 +32,7 @@ namespace ParkApp
 
 
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblhoraLogin.Text = DateTime.Now.ToLongTimeString();
-            lblfechaLogin.Text = DateTime.Now.ToShortDateString();
-
-        }
+ 
 
         private void btnMinizarL_Click(object sender, EventArgs e)
         {

@@ -18,12 +18,7 @@ namespace ParkApp
             InitializeComponent();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblhora.Text = DateTime.Now.ToLongTimeString();
-            lblfecha.Text = DateTime.Now.ToShortDateString();
-
-        }
+       
 
         private void btnticket_Click(object sender, EventArgs e)
         {
