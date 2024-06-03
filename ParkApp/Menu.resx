@@ -393,13 +393,6 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="btnMenuEx.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAEFJREFUaEPt1rEJACAMRcHsP5YOprESsdJGhDt4fdL9AABWNWufNW7e/PhIyQAA
-        4JwZ/zAzHgCAO2b8w8x4AJgiOsT1EClxfjT0AAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="PlacaEntrada.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -412,4 +405,11 @@
   <metadata name="HoraIngresoEstacionado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btnMenuEx.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAEFJREFUaEPt1rEJACAMRcHsP5YOprESsdJGhDt4fdL9AABWNWufNW7e/PhIyQAA
+        4JwZ/zAzHgCAO2b8w8x4AJgiOsT1EClxfjT0AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>
