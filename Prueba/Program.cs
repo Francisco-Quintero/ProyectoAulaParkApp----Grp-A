@@ -15,6 +15,8 @@ namespace Prueba
             ENTITY.TipoVehiculo tipoVehiculo1 = new ENTITY.TipoVehiculo("Moto");
             ENTITY.TipoVehiculo tipoVehiculo2 = new ENTITY.TipoVehiculo("Bicicleta");
 
+
+
             //CREAR UN TIPO DE VEHICULO
             repositorioTipoVehiculo.Crear(tipoVehiculo2); 
             //,

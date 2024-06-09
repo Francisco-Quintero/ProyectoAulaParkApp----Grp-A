@@ -97,6 +97,18 @@
     <Compile Include="Tikets.Designer.cs">
       <DependentUpon>Tikets.cs</DependentUpon>
     </Compile>
+    <Compile Include="TipoVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoVehiculo.Designer.cs">
+      <DependentUpon>TipoVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +142,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tikets.resx">
       <DependentUpon>Tikets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoVehiculo.resx">
+      <DependentUpon>TipoVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -177,6 +195,9 @@
     <Content Include="Imagenes\icons8-usuario-100.png" />
     <Content Include="Imagenes\icons8-usuario-50.png" />
     <Content Include="Imagenes\icons8-usuario-90.png" />
+    <None Include="Resources\trafico %281%29.png" />
+    <None Include="Resources\trafico.png" />
+    <None Include="Resources\agregar-usuario.png" />
     <None Include="Resources\icons8-minimizar-la-ventana-50.png" />
     <None Include="Resources\icons8-alternar-pantalla-completa-50.png" />
     <None Include="Resources\icons8-minimizar-50.png" />
