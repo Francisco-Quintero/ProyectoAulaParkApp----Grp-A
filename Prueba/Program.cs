@@ -17,7 +17,7 @@ namespace Prueba
 
             //CREAR UN TIPO DE VEHICULO
             repositorioTipoVehiculo.Crear(tipoVehiculo2); 
-
+            //,
             //Listar Los Tipos de Vehiculo
             //var lista = repositorioTipoVehiculo.Listar(); 
             //foreach (var item in lista)
