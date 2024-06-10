@@ -1,6 +1,6 @@
 ﻿namespace ParkApp
 {
-    partial class TipoVehiculo
+    partial class TipoVehiculo1
     {
         /// <summary>
         /// Required designer variable.

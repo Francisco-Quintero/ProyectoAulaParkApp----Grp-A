@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace ParkApp
 {
-    public partial class Tikets : Form
+    public partial class FrmTikets : Form
     {
-        public Tikets()
+        public FrmTikets()
         {
             InitializeComponent();
         }

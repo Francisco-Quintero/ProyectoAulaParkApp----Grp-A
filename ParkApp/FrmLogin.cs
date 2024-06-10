@@ -3,9 +3,9 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 namespace ParkApp
 {
-    public partial class Form1 : Form
+    public partial class FrmLogin : Form
     {
-        public Form1()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -43,7 +43,7 @@ namespace ParkApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Menu form2 = new Menu();
+            FrmMenu form2 = new FrmMenu();
             this.Hide();
             form2.ShowDialog();
         }
