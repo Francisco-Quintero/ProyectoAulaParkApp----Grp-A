@@ -45,11 +45,15 @@
     <Compile Include="ConexionDB\Conexion.cs" />
     <Compile Include="Interfaces\IRepositorio.cs" />
     <Compile Include="Interfaces\IRepositorioListar.cs" />
+    <Compile Include="Interfaces\IRepositorioTicket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\RepositorioParqueadero.cs" />
+    <Compile Include="Repositorios\RepositorioRol.cs" />
+    <Compile Include="Repositorios\RepositorioTicket.cs" />
     <Compile Include="Repositorios\RepositorioTipoParqueadero.cs" />
     <Compile Include="Repositorios\RepositorioTipoVehiculo.cs" />
     <Compile Include="Repositorios\RepositorioUsuario.cs" />
+    <Compile Include="Repositorios\RepositorioVehiculo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ENTITY\ENTITY.csproj">

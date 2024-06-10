@@ -9,24 +9,25 @@ using System.Threading.Tasks;
 
 namespace DALL.Repositorios
 {
-    public class RepositorioTipoParqueadero : Conexion, IRepositorio<TipoParqueadero>
+    public class RepositorioRol : Conexion, IRepositorio<Rol>
     {
-        public RepositorioTipoParqueadero(string StringConection) : base(StringConection)
+        public RepositorioRol(string StringConection) : base(StringConection)
         {
         }
 
-        public RepositorioTipoParqueadero() : base()
+        public RepositorioRol() : base()
         {
 
         }
 
-        public bool Actualizar(TipoParqueadero entidad)
+        public bool Actualizar(Rol entidad)
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "UPDATE TipoParqueadero SET Descripcion = @Descripcion WHERE IdTipoParqueadero = @IdTipoParqueadero";
-                Command.Parameters.Add("@Descripcion", SqlDbType.NChar, 20).Value = entidad.Descripcion;
-                Command.Parameters.Add("@IdTipoParqueadero", SqlDbType.Int).Value = entidad.TipoParqueaderos;
+                Command.CommandText = "UPDATE Roles SET Nombre = @Nombre, Estado = @Estado WHERE IdRol = @IdRol";
+                Command.Parameters.Add("@IdRol", SqlDbType.NChar, 20).Value = entidad.IdRol;
+                Command.Parameters.Add("@Nombre", SqlDbType.NChar, 20).Value = entidad.Nombre;
+                Command.Parameters.Add("@Estado", SqlDbType.Bit).Value = entidad.Estado;
 
                 try
                 {
@@ -47,12 +48,14 @@ namespace DALL.Repositorios
             }
         }
 
-        public bool Crear(TipoParqueadero entidad)
+        public bool Crear(Rol entidad)
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "INSERT INTO TipoParqueadero (Descripcion) VALUES (@Descripcion)";
-                Command.Parameters.Add("@Descripcion", SqlDbType.NChar, 20).Value = entidad.Descripcion;
+                Command.CommandText = "INSERT INTO Roles (IdRol, Nombre, Estado) VALUES (@IdRol, @Nombre, @Estado)";
+                Command.Parameters.Add("@IdRol", SqlDbType.NChar, 20).Value = entidad.IdRol;
+                Command.Parameters.Add("@Nombre", SqlDbType.NChar, 20).Value = entidad.Nombre;
+                Command.Parameters.Add("@Estado", SqlDbType.Bit).Value = entidad.Estado;
 
                 try
                 {
@@ -77,8 +80,8 @@ namespace DALL.Repositorios
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "DELETE FROM TipoParqueadero WHERE IdTipoParqueadero = @IdTipoParqueadero";
-                Command.Parameters.Add("@IdTipoParqueadero", SqlDbType.Int).Value = id;
+                Command.CommandText = "DELETE FROM Roles WHERE IdRol = @IdRol";
+                Command.Parameters.Add("@IdRol", SqlDbType.NChar, 20).Value = id;
 
                 try
                 {
@@ -99,14 +102,14 @@ namespace DALL.Repositorios
             }
         }
 
-        public List<TipoParqueadero> Listar()
+        public List<Rol> Listar()
         {
-            var ListaTipoParqueadero = new List<TipoParqueadero>();
+            var ListaRol = new List<Rol>();
 
 
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "SELECT IdTipoParqueadero, Descripcion FROM TipoParqueadero";
+                Command.CommandText = "SELECT IdRol, Nombre, Estado FROM Roles";
 
                 try
                 {
@@ -115,29 +118,27 @@ namespace DALL.Repositorios
                     {
                         while (reader.Read())
                         {
-
-
-                            ListaTipoParqueadero.Add(Map(reader));
+                            ListaRol.Add(Map(reader));
                         }
                     }
                 }
                 catch (SqlException ex)
                 {
-                    // Manejo de excepciones, log o cualquier otra acción requerida
-                    //Console.WriteLine(ex.Message);
+                    //Manejo de excepciones, log o cualquier otra acción requerida
+                    Console.WriteLine(ex.Message);
                 }
                 finally
                 {
                     ConnectDB.Close();
                 }
             }
-            return ListaTipoParqueadero;
+            return ListaRol;
         }
 
-        private TipoParqueadero Map(SqlDataReader reader)
+        private Rol Map(SqlDataReader reader)
         {
-            var tipoParqueadero = new TipoParqueadero(reader.GetString(0).Trim(), reader.GetString(1).Trim());
-            return tipoParqueadero;
+            var rol = new Rol(reader.GetInt32(0), reader.GetString(1).Trim(), reader.GetBoolean(2));
+            return rol;
         }
     }
 }

@@ -19,10 +19,6 @@ namespace DALL.Repositorios
         {
                 
         }
-        //private string ObtenerCadenaConexion()
-        //{
-        //    return ConfigurationManager.ConnectionStrings["ParckAppDB"].ConnectionString;
-        //}
 
         public bool Actualizar(TipoVehiculo entidad)
         {

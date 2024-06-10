@@ -44,6 +44,11 @@
     <Compile Include="ICrud.cs" />
     <Compile Include="ServicioParqueadero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicioRol.cs" />
+    <Compile Include="ServicioTicket.cs" />
+    <Compile Include="ServicioTipoVehiculo.cs" />
+    <Compile Include="ServicioUsuario.cs" />
+    <Compile Include="ServicioVehiculo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DALL\DALL.csproj">

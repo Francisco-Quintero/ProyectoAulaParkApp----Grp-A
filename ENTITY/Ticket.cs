@@ -4,22 +4,23 @@ namespace ENTITY
 {
     public class Ticket
     {
-        public string Codigo { get; set; }
-        public DateTime HoraEmitido { get; set; } = DateTime.Now;
+        public int IdTicket { get; set; }
+        public DateTime HoraEmititido { get; set; }
         public bool Estado { get; set; }
         public string Descripcion { get; set; }
+        public int IdPersona { get; set; }
 
-        public Ticket(string codigo, DateTime horaEmitido, bool estado, string descripcion)
+        public Ticket(int idTicket, DateTime horaEmititido, bool estado, string descripcion, int idPersona)
         {
-            Codigo = codigo;
-            HoraEmitido = horaEmitido;
+            IdTicket = idTicket;
+            HoraEmititido = horaEmititido;
             Estado = estado;
             Descripcion = descripcion;
+            IdPersona = idPersona;
         }
 
         public Ticket()
         {
-
         }
     }
 }

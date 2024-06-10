@@ -1,11 +1,8 @@
 ﻿using ENTITY;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DALL.Repositorios
 {
@@ -15,73 +12,136 @@ namespace DALL.Repositorios
         {
         }
 
+        public RepositorioUsuario()
+        {
+            
+        }
+
         public bool Actualizar(Usuario entidad)
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "UPDATE Usuarios" +
-                " SET  Persona = @Persona, Rol = @Rol, Nombre = @Nombre, Contraseña = @Contraseña, Estado= @Estado, FechaCreacion= @FechaCreacion  WHERE Id = @Id";
-                Command.Parameters.Add("Persona", SqlDbType.NChar).Value = entidad.Persona;
-                Command.Parameters.Add("Rol", SqlDbType.NChar).Value = entidad.Rol;
-                Command.Parameters.Add("Nombre", SqlDbType.NChar).Value = entidad.Nombre;
-                Command.Parameters.Add("Contraseña", SqlDbType.NChar).Value = entidad.Contraseña;
-                Command.Parameters.Add("Estado", SqlDbType.Bit).Value = entidad.Estado;
-                Command.Parameters.Add("FechaCreacion", SqlDbType.DateTime).Value = entidad.FechaCreacion;
+                Command.CommandText = "UPDATE Usuarios SET Nombre = @Nombre, Contraseña = @Contraseña, FechaCreacion = @FechaCreacion, " +
+                                      "Estado = @Estado, IdRol = @IdRol WHERE IdUsuario = @IdUsuario";
+                Command.Parameters.Add("@Nombre", SqlDbType.NChar).Value = entidad.Nombre;
+                Command.Parameters.Add("@Contraseña", SqlDbType.NChar).Value = entidad.Contraseña;
+                Command.Parameters.Add("@FechaCreacion", SqlDbType.DateTime).Value = entidad.FechaCreacion;
+                Command.Parameters.Add("@Estado", SqlDbType.Bit).Value = entidad.Estado;
+                Command.Parameters.Add("@IdRol", SqlDbType.Int).Value = entidad.IdRol;
+                Command.Parameters.Add("@IdUsuario", SqlDbType.Int).Value = entidad.IdUsuario;
 
-                ConnectDB.Open();
-
-                Command.ExecuteNonQuery();
-                ConnectDB.Close();
+                try
+                {
+                    ConnectDB.Open();
+                    Command.ExecuteNonQuery();
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    ConnectDB.Close();
+                }
             }
-
-            return false;
         }
 
         public bool Crear(Usuario entidad)
         {
-            
-               
-                    using (var Command = ConnectDB.CreateCommand())
-                    {
-                        Command.CommandText = "INSERT INTO Usuarios (Persona, Rol, Nombre, Contraseña, Estado, FechaCreacion) " +
-                                              "VALUES (@Persona, @Rol, @Nombre, @Contraseña, @Estado, @FechaCreacion)";
-                        Command.Parameters.Add("@Persona", SqlDbType.NChar).Value = entidad.Persona;
-                        Command.Parameters.Add("@Rol", SqlDbType.NChar).Value = entidad.Rol;
-                        Command.Parameters.Add("@Nombre", SqlDbType.NChar).Value = entidad.Nombre;
-                        Command.Parameters.Add("@Contraseña", SqlDbType.NChar).Value = entidad.Contraseña;
-                        Command.Parameters.Add("@Estado", SqlDbType.Bit).Value = entidad.Estado;
-                        Command.Parameters.Add("@FechaCreacion", SqlDbType.DateTime).Value = entidad.FechaCreacion;
+            using (var Command = ConnectDB.CreateCommand())
+            {
+                Command.CommandText = "INSERT INTO Usuarios (Nombre, Contraseña, FechaCreacion, Estado, IdRol) " +
+                                      "VALUES (@Nombre, @Contraseña, @FechaCreacion, @Estado, @IdRol)";
+                Command.Parameters.Add("@Nombre", SqlDbType.NChar).Value = entidad.Nombre;
+                Command.Parameters.Add("@Contraseña", SqlDbType.NChar).Value = entidad.Contraseña;
+                Command.Parameters.Add("@FechaCreacion", SqlDbType.DateTime).Value = entidad.FechaCreacion;
+                Command.Parameters.Add("@Estado", SqlDbType.Bit).Value = entidad.Estado;
+                Command.Parameters.Add("@IdRol", SqlDbType.Int).Value = entidad.IdRol;
 
-                        try
-                        {
-                            ConnectDB.Open();
-                            Command.ExecuteNonQuery();
-                            return true;
-                        }
-                        catch (SqlException ex)
-                        {
-                            // Manejo de excepciones, log o cualquier otra acción requerida
-                            Console.WriteLine(ex.Message);
-                            return false;
-                        }
-                        finally
-                        {
-                            ConnectDB.Close();
-                        }
-                    }
-                
-            
-
+                try
+                {
+                    ConnectDB.Open();
+                    Command.ExecuteNonQuery();
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    ConnectDB.Close();
+                }
+            }
         }
 
         public bool Eliminar(int id)
         {
-            throw new NotImplementedException();
+            using (var Command = ConnectDB.CreateCommand())
+            {
+                Command.CommandText = "DELETE FROM Usuarios WHERE IdUsuario = @IdUsuario";
+                Command.Parameters.Add("@IdUsuario", SqlDbType.Int).Value = id;
+
+                try
+                {
+                    ConnectDB.Open();
+                    int filasAfectadas = Command.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    ConnectDB.Close();
+                }
+            }
         }
 
         public List<Usuario> Listar()
         {
-            throw new NotImplementedException();
+            var listaUsuarios = new List<Usuario>();
+
+            using (var Command = ConnectDB.CreateCommand())
+            {
+                Command.CommandText = "SELECT IdUsuario, Nombre, Contraseña, FechaCreacion, Estado, IdRol FROM Usuarios";
+
+                try
+                {
+                    ConnectDB.Open();
+                    using (var reader = Command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var usuario = new Usuario
+                            {
+                                IdUsuario = reader.GetInt32(0),
+                                Nombre = reader.GetString(1).Trim(),
+                                Contraseña = reader.GetString(2).Trim(),
+                                FechaCreacion = reader.GetDateTime(3),
+                                Estado = reader.GetBoolean(4),
+                                IdRol = reader.GetInt32(5)
+                            };
+                            listaUsuarios.Add(usuario);
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    ConnectDB.Close();
+                }
+            }
+            return listaUsuarios;
         }
     }
 }

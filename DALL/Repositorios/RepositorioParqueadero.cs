@@ -13,8 +13,6 @@ namespace DALL.Repositorios
             throw new System.NotImplementedException();
         }
 
-        
-
         public bool Crear(Parqueadero entidad)
         {
             throw new System.NotImplementedException();

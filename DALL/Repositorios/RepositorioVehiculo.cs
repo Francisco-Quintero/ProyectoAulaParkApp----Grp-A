@@ -1,32 +1,30 @@
 ﻿using ENTITY;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DALL.Repositorios
 {
-    public class RepositorioTipoParqueadero : Conexion, IRepositorio<TipoParqueadero>
+    public class RepositorioVehiculo : Conexion, IRepositorio<Vehiculo>
     {
-        public RepositorioTipoParqueadero(string StringConection) : base(StringConection)
+        public RepositorioVehiculo(string StringConection) : base(StringConection)
         {
         }
 
-        public RepositorioTipoParqueadero() : base()
+        public RepositorioVehiculo() : base()
         {
-
         }
 
-        public bool Actualizar(TipoParqueadero entidad)
+        public bool Actualizar(Vehiculo entidad)
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "UPDATE TipoParqueadero SET Descripcion = @Descripcion WHERE IdTipoParqueadero = @IdTipoParqueadero";
-                Command.Parameters.Add("@Descripcion", SqlDbType.NChar, 20).Value = entidad.Descripcion;
-                Command.Parameters.Add("@IdTipoParqueadero", SqlDbType.Int).Value = entidad.TipoParqueaderos;
+                Command.CommandText = "UPDATE Vehiculo SET Placa = @Placa, IdTipoVehiculo = @IdTipoVehiculo, Cliente = @Cliente WHERE IdVehiculo = @IdVehiculo";
+                Command.Parameters.Add("@IdVehiculo", SqlDbType.Int).Value = entidad.IdVehiculo;
+                Command.Parameters.Add("@Placa", SqlDbType.NChar, 7).Value = entidad.Placa;
+                Command.Parameters.Add("@IdTipoVehiculo", SqlDbType.Int).Value = entidad.IdTipoVehiculo;
+                Command.Parameters.Add("@Cliente", SqlDbType.NChar, 50).Value = entidad.Cliente ?? (object)DBNull.Value;
 
                 try
                 {
@@ -36,7 +34,6 @@ namespace DALL.Repositorios
                 }
                 catch (SqlException ex)
                 {
-                    // Manejo de excepciones, log o cualquier otra acción requerida
                     Console.WriteLine(ex.Message);
                     return false;
                 }
@@ -47,12 +44,14 @@ namespace DALL.Repositorios
             }
         }
 
-        public bool Crear(TipoParqueadero entidad)
+        public bool Crear(Vehiculo entidad)
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "INSERT INTO TipoParqueadero (Descripcion) VALUES (@Descripcion)";
-                Command.Parameters.Add("@Descripcion", SqlDbType.NChar, 20).Value = entidad.Descripcion;
+                Command.CommandText = "INSERT INTO Vehiculo (Placa, IdTipoVehiculo, Cliente) VALUES (@Placa, @IdTipoVehiculo, @Cliente)";
+                Command.Parameters.Add("@Placa", SqlDbType.NChar, 7).Value = entidad.Placa;
+                Command.Parameters.Add("@IdTipoVehiculo", SqlDbType.Int).Value = entidad.IdTipoVehiculo;
+                Command.Parameters.Add("@Cliente", SqlDbType.NChar, 50).Value = entidad.Cliente ?? (object)DBNull.Value;
 
                 try
                 {
@@ -62,7 +61,6 @@ namespace DALL.Repositorios
                 }
                 catch (SqlException ex)
                 {
-                    // Manejo de excepciones, log o cualquier otra acción requerida
                     Console.WriteLine(ex.Message);
                     return false;
                 }
@@ -77,8 +75,8 @@ namespace DALL.Repositorios
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "DELETE FROM TipoParqueadero WHERE IdTipoParqueadero = @IdTipoParqueadero";
-                Command.Parameters.Add("@IdTipoParqueadero", SqlDbType.Int).Value = id;
+                Command.CommandText = "DELETE FROM Vehiculo WHERE IdVehiculo = @IdVehiculo";
+                Command.Parameters.Add("@IdVehiculo", SqlDbType.Int).Value = id;
 
                 try
                 {
@@ -88,7 +86,6 @@ namespace DALL.Repositorios
                 }
                 catch (SqlException ex)
                 {
-                    // Manejo de excepciones, log o cualquier otra acción requerida
                     Console.WriteLine(ex.Message);
                     return false;
                 }
@@ -99,14 +96,13 @@ namespace DALL.Repositorios
             }
         }
 
-        public List<TipoParqueadero> Listar()
+        public List<Vehiculo> Listar()
         {
-            var ListaTipoParqueadero = new List<TipoParqueadero>();
-
+            var listaVehiculos = new List<Vehiculo>();
 
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "SELECT IdTipoParqueadero, Descripcion FROM TipoParqueadero";
+                Command.CommandText = "SELECT IdVehiculo, Placa, IdTipoVehiculo, Cliente FROM Vehiculos";
 
                 try
                 {
@@ -115,29 +111,27 @@ namespace DALL.Repositorios
                     {
                         while (reader.Read())
                         {
-
-
-                            ListaTipoParqueadero.Add(Map(reader));
+                            var vehiculo = new Vehiculo
+                            {
+                                IdVehiculo = reader.GetInt32(0),
+                                Placa = reader.GetString(1).Trim(),
+                                IdTipoVehiculo = reader.GetInt32(2),
+                                Cliente = reader.IsDBNull(3) ? null : reader.GetString(3).Trim()
+                            };
+                            listaVehiculos.Add(vehiculo);
                         }
                     }
                 }
                 catch (SqlException ex)
                 {
-                    // Manejo de excepciones, log o cualquier otra acción requerida
-                    //Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex.Message);
                 }
                 finally
                 {
                     ConnectDB.Close();
                 }
             }
-            return ListaTipoParqueadero;
-        }
-
-        private TipoParqueadero Map(SqlDataReader reader)
-        {
-            var tipoParqueadero = new TipoParqueadero(reader.GetString(0).Trim(), reader.GetString(1).Trim());
-            return tipoParqueadero;
+            return listaVehiculos;
         }
     }
 }
