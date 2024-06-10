@@ -65,7 +65,7 @@
             this.txtTipoVehiculo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTipoVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
             this.txtTipoVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipoVehiculo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoVehiculo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipoVehiculo.ForeColor = System.Drawing.Color.White;
             this.txtTipoVehiculo.Location = new System.Drawing.Point(331, 177);
             this.txtTipoVehiculo.Name = "txtTipoVehiculo";
@@ -86,6 +86,7 @@
             this.btnRegistrar.TabIndex = 63;
             this.btnRegistrar.Text = "REGISTRAR";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnCerrar
             // 

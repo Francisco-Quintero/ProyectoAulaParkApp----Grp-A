@@ -8,6 +8,16 @@ namespace ENTITY
 {
     public class Usuario
     {
+
+
+        public Usuario(string nombre, string contraseña)
+        {
+
+            Nombre = nombre;
+            Contraseña = contraseña;
+        }
+
+
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
         public string Contraseña { get; set; }
