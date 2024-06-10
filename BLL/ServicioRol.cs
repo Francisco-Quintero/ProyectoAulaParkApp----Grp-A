@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ServicioRol : ICrud<Rol>
+    public class ServicioRol
     {
         private RepositorioRol RepositorioRol = new RepositorioRol();
 
