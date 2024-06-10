@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ServicioVehiculo
+    public class ServicioVehiculo : ICrud<Vehiculo>
     {
         private RepositorioVehiculo RepositorioVehiculo = new RepositorioVehiculo();
 

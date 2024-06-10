@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BLL
 {
-    public class ServicioParqueadero
+    public class ServicioParqueadero : ICrud<Parqueadero>
     {
         private RepositorioParqueadero RepositorioParqueadero = new RepositorioParqueadero();
 
