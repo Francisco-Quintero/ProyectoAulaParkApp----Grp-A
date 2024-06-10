@@ -146,6 +146,16 @@ namespace ParkApp
 
         }
 
+        private void btnNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Usuarios>();
+        }
+
+        private void btnTipoVehiculo_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<TipoVehiculo>();
+        }
+
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

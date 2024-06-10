@@ -63,6 +63,16 @@ namespace ParkApp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar_usuario {
+            get {
+                object obj = ResourceManager.GetObject("agregar-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap entrada {
             get {
                 object obj = ResourceManager.GetObject("entrada", resourceCulture);
@@ -156,6 +166,26 @@ namespace ParkApp.Properties {
         internal static System.Drawing.Bitmap salidas {
             get {
                 object obj = ResourceManager.GetObject("salidas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trafico {
+            get {
+                object obj = ResourceManager.GetObject("trafico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trafico__1_ {
+            get {
+                object obj = ResourceManager.GetObject("trafico (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

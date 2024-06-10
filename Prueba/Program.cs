@@ -26,6 +26,8 @@ namespace Prueba
 
 
 
+
+
             //CREAR UN TIPO DE VEHICULO
             //repositorioTipoVehiculo.Crear(tipoVehiculo2); 
 
