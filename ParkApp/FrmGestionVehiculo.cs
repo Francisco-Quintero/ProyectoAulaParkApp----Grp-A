@@ -12,12 +12,12 @@ using ENTITY;
 
 namespace ParkApp
 {
-    public partial class TipoVehiculo : Form
+    public partial class TipoVehiculo1 : Form
     {
 
         private ServicioTipoVehiculo servicioTipoVehiculo;
 
-        public TipoVehiculo()
+        public TipoVehiculo1()
         {
             InitializeComponent();
             servicioTipoVehiculo = new ServicioTipoVehiculo();

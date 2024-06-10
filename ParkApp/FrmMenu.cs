@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace ParkApp
 {
-    public partial class Menu : Form
+    public partial class FrmMenu : Form
     {
-        public Menu()
+        public FrmMenu()
         {
             InitializeComponent();
         }
@@ -94,19 +94,19 @@ namespace ParkApp
         private void btnIngreso_Click(object sender, EventArgs e)
         {
             //AbrirFormEnPanel(new Ingreso());
-            AbrirFormulario<Ingreso>();
+            AbrirFormulario<FrmIngreso>();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //AbrirFormEnPanel(new InformeSalidas());
-            AbrirFormulario<InformeSalidas>();
+            AbrirFormulario<FrmInformeSalidas>();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             //AbrirFormEnPanel(new Salidas());
-            AbrirFormulario<Salidas>();
+            AbrirFormulario<FrmSalida>();
         }
 
         private void dataGridEntradas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -128,7 +128,7 @@ namespace ParkApp
         private void btnHistorialIngresos_Click(object sender, EventArgs e)
         {
             //AbrirFormEnPanel(new InformeIngresos());
-            AbrirFormulario<InformeIngresos>();
+            AbrirFormulario<FrmInformeIngresos>();
         }
 
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
@@ -148,12 +148,12 @@ namespace ParkApp
 
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Usuarios>();
+            AbrirFormulario<FrmGestionUsuarios>();
         }
 
         private void btnTipoVehiculo_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<TipoVehiculo>();
+            AbrirFormulario<TipoVehiculo1>();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

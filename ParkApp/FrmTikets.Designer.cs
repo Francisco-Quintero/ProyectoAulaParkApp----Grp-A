@@ -1,6 +1,6 @@
 ﻿namespace ParkApp
 {
-    partial class Tikets
+    partial class FrmTikets
     {
         /// <summary>
         /// Required designer variable.
@@ -71,7 +71,7 @@
             this.lblfechatick.AutoSize = true;
             this.lblfechatick.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfechatick.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblfechatick.Location = new System.Drawing.Point(134, 59);
+            this.lblfechatick.Location = new System.Drawing.Point(149, 59);
             this.lblfechatick.Name = "lblfechatick";
             this.lblfechatick.Size = new System.Drawing.Size(112, 36);
             this.lblfechatick.TabIndex = 28;
@@ -181,14 +181,14 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Tikets
+            // FrmTikets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 402);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Tikets";
+            this.Name = "FrmTikets";
             this.Text = "Tikets";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

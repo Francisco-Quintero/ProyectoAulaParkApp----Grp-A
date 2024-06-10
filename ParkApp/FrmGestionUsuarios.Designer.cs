@@ -1,6 +1,6 @@
 ﻿namespace ParkApp
 {
-    partial class Usuarios
+    partial class FrmGestionUsuarios
     {
         /// <summary>
         /// Required designer variable.

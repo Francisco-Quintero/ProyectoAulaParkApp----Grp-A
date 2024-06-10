@@ -15,13 +15,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ParkApp
 {
-    public partial class Usuarios : Form
+    public partial class FrmGestionUsuarios : Form
     {
 
         private ServicioUsuario servicioUsuario;
         private ServicioRol servicioRol;
         //private ServicioPersona servicioPersona;
-        public Usuarios()
+        public FrmGestionUsuarios()
         {
             InitializeComponent();
             servicioUsuario = new ServicioUsuario();
@@ -68,17 +68,15 @@ namespace ParkApp
             String NombreUsuario = txtNombreUsuario.Text;
             String Contraseña = txtContraseñaUsuario.Text;
         
-            String Estado = comboBoxEstado.SelectedText;
-            String Rol = comboBoxRol.SelectedText;
-
-
+            //String Estado = comboBoxEstado.SelectedText;
+            //String Rol = comboBoxRol.SelectedText;
 
             //string TipoVehiculo = comboBox1.SelectedItem.ToString();
             ENTITY.Usuario usuario = new ENTITY.Usuario(NombreUsuario, Contraseña);
-            ENTITY.Rol rol = new ENTITY.Rol(Rol, Estado);
+           
 
             servicioUsuario.Crear(usuario);
-            servicioRol.Crear(rol);
+          
 
         }
 

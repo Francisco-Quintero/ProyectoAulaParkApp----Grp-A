@@ -2,7 +2,7 @@
 {
     public class TipoVehiculo
     {
-        public TipoVehiculo() { }
+        public TipoVehiculo() {}
 
         public TipoVehiculo(string descripcion)
         {

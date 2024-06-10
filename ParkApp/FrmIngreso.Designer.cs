@@ -1,6 +1,6 @@
 ﻿namespace ParkApp
 {
-    partial class Ingreso
+    partial class FrmIngreso
     {
         /// <summary>
         /// Required designer variable.
@@ -36,10 +36,10 @@
             this.btnticket = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.placa = new System.Windows.Forms.TextBox();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.boxTipoIngreso = new System.Windows.Forms.ComboBox();
             this.btnCerrarPingreso = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarPingreso)).BeginInit();
             this.SuspendLayout();
@@ -132,17 +132,17 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "TIPO DE VEHICULO";
             // 
-            // placa
+            // txtPlaca
             // 
-            this.placa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.placa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
-            this.placa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.placa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.placa.ForeColor = System.Drawing.Color.White;
-            this.placa.Location = new System.Drawing.Point(223, 165);
-            this.placa.Name = "placa";
-            this.placa.Size = new System.Drawing.Size(403, 25);
-            this.placa.TabIndex = 30;
+            this.txtPlaca.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPlaca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txtPlaca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlaca.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlaca.ForeColor = System.Drawing.Color.White;
+            this.txtPlaca.Location = new System.Drawing.Point(223, 165);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(403, 25);
+            this.txtPlaca.TabIndex = 30;
             // 
             // label1
             // 
@@ -161,20 +161,17 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // comboBox1
+            // boxTipoIngreso
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "MOTOCICLETA",
-            "AUTOMOVIL"});
-            this.comboBox1.Location = new System.Drawing.Point(223, 279);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(183, 28);
-            this.comboBox1.TabIndex = 44;
+            this.boxTipoIngreso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.boxTipoIngreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.boxTipoIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxTipoIngreso.ForeColor = System.Drawing.Color.White;
+            this.boxTipoIngreso.FormattingEnabled = true;
+            this.boxTipoIngreso.Location = new System.Drawing.Point(223, 279);
+            this.boxTipoIngreso.Name = "boxTipoIngreso";
+            this.boxTipoIngreso.Size = new System.Drawing.Size(183, 28);
+            this.boxTipoIngreso.TabIndex = 44;
             // 
             // btnCerrarPingreso
             // 
@@ -194,7 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
             this.ClientSize = new System.Drawing.Size(879, 588);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.boxTipoIngreso);
             this.Controls.Add(this.btnCerrarPingreso);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.lblhora);
@@ -203,12 +200,13 @@
             this.Controls.Add(this.btnticket);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.placa);
+            this.Controls.Add(this.txtPlaca);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ingreso";
             this.Text = "Ingreso";
+            this.Load += new System.EventHandler(this.Ingreso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarPingreso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,10 +222,10 @@
         public System.Windows.Forms.Button btnticket;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox placa;
+        private System.Windows.Forms.TextBox txtPlaca;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox btnCerrarPingreso;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox boxTipoIngreso;
     }
 }

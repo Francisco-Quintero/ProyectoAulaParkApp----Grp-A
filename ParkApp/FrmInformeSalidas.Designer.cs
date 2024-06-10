@@ -1,6 +1,6 @@
 ﻿namespace ParkApp
 {
-    partial class InformeSalidas
+    partial class FrmInformeSalidas
     {
         /// <summary>
         /// Required designer variable.

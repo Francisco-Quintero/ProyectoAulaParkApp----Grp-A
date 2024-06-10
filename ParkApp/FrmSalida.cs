@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace ParkApp
 {
-    public partial class Salidas : Form
+    public partial class FrmSalida : Form
     {
-        public Salidas()
+        public FrmSalida()
         {
             InitializeComponent();
         }
