@@ -9,7 +9,10 @@ namespace ENTITY
     public class Usuario
     {
 
-
+        public Usuario()
+        {
+            
+        }
         public Usuario(string nombre, string contraseña)
         {
 
@@ -17,6 +20,15 @@ namespace ENTITY
             Contraseña = contraseña;
         }
 
+        public Usuario(int idUsuario, string nombre, string contraseña, DateTime fechaCreacion, bool estado, int idRol)
+        {
+            IdUsuario = idUsuario;
+            Nombre = nombre;
+            Contraseña = contraseña;
+            FechaCreacion = fechaCreacion;
+            Estado = estado;
+            IdRol = idRol;
+        }
 
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
