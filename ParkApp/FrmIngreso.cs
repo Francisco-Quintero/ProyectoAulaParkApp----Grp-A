@@ -10,6 +10,7 @@ namespace ParkApp
     public partial class FrmIngreso : Form
     {
         private ServicioTipoVehiculo servicioTipoVehiculo = new ServicioTipoVehiculo();
+        private ServicioVehiculo servicioVehiculo= new ServicioVehiculo();
         public FrmIngreso()
         {
             InitializeComponent();
@@ -50,12 +51,9 @@ namespace ParkApp
 
         private void btnticket_Click(object sender, EventArgs e)
         {
-            FrmTikets form2 = new FrmTikets();
-            form2.datoplaca.Text = txtPlaca.Text;
-
-
-
-            form2.Show();
+            //FrmTikets form2 = new FrmTikets();
+            //form2.datoplaca.Text = txtPlaca.Text;
+            //form2.Show();
         }
 
         private void btnCerrarPingreso_Click(object sender, EventArgs e)
@@ -67,5 +65,37 @@ namespace ParkApp
         {
             ListarTipoVehiculo();
         }
+
+        private void btnRealizarIngreso_Click(object sender, EventArgs e)
+        {
+         
+
+            string placaIngreso = txtPlaca.Text;
+
+           
+            // Crear una nueva instancia de Vehiculo usando la placa ingresada
+            Vehiculo vehiculo = new Vehiculo(placaIngreso);
+
+            // Intentar registrar el nuevo Vehiculo usando el servicio
+            try
+            {
+                bool resultado = servicioVehiculo.Crear(vehiculo);
+                // Mostrar mensaje de éxito o error
+                if (resultado)
+                {
+                    MessageBox.Show("Registro exitoso.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar el vehículo.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        
     }
 }

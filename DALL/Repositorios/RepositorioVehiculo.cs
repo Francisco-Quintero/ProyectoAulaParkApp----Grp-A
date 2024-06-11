@@ -20,11 +20,11 @@ namespace DALL.Repositorios
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "UPDATE Vehiculo SET Placa = @Placa, IdTipoVehiculo = @IdTipoVehiculo, Cliente = @Cliente WHERE IdVehiculo = @IdVehiculo";
+                Command.CommandText = "UPDATE Vehiculo SET Placa = @Placa, IdTipoVehiculo = @IdTipoVehiculo WHERE IdVehiculo = @IdVehiculo";
                 Command.Parameters.Add("@IdVehiculo", SqlDbType.Int).Value = entidad.IdVehiculo;
                 Command.Parameters.Add("@Placa", SqlDbType.NChar, 7).Value = entidad.Placa;
                 Command.Parameters.Add("@IdTipoVehiculo", SqlDbType.Int).Value = entidad.IdTipoVehiculo;
-                Command.Parameters.Add("@Cliente", SqlDbType.NChar, 50).Value = entidad.Cliente ?? (object)DBNull.Value;
+              
 
                 try
                 {
@@ -48,10 +48,10 @@ namespace DALL.Repositorios
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "INSERT INTO Vehiculo (Placa, IdTipoVehiculo, Cliente) VALUES (@Placa, @IdTipoVehiculo, @Cliente)";
+                Command.CommandText = "INSERT INTO Vehiculo (Placa, IdTipoVehiculo) VALUES (@Placa, @IdTipoVehiculo)";
                 Command.Parameters.Add("@Placa", SqlDbType.NChar, 7).Value = entidad.Placa;
                 Command.Parameters.Add("@IdTipoVehiculo", SqlDbType.Int).Value = entidad.IdTipoVehiculo;
-                Command.Parameters.Add("@Cliente", SqlDbType.NChar, 50).Value = entidad.Cliente ?? (object)DBNull.Value;
+
 
                 try
                 {
@@ -102,7 +102,7 @@ namespace DALL.Repositorios
 
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "SELECT IdVehiculo, Placa, IdTipoVehiculo, Cliente FROM Vehiculos";
+                Command.CommandText = "SELECT IdVehiculo, Placa, IdTipoVehiculo FROM Vehiculos";
 
                 try
                 {
@@ -116,7 +116,7 @@ namespace DALL.Repositorios
                                 IdVehiculo = reader.GetInt32(0),
                                 Placa = reader.GetString(1).Trim(),
                                 IdTipoVehiculo = reader.GetInt32(2),
-                                Cliente = reader.IsDBNull(3) ? null : reader.GetString(3).Trim()
+                                
                             };
                             listaVehiculos.Add(vehiculo);
                         }
