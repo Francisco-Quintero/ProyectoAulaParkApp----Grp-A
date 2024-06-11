@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL;
+using ENTITY;
+using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 namespace ParkApp
@@ -31,6 +34,52 @@ namespace ParkApp
 
         //}
 
+
+
+        private void ValidarCredenciales()
+        {
+            try
+            {
+                Usuario usuario = new ServicioUsuario().Listar().Where(u => u.Nombre == txtUsuario.Text
+                        && u.Contraseña == txtContraseña.Text).FirstOrDefault();
+
+                if (txtUsuario.Text == "")
+                {
+                    MessageBox.Show("El campo del usuario está vacío.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUsuario.Focus();
+                }
+                else if (txtContraseña.Text == "")
+                {
+                    MessageBox.Show("El campo de contraseña está vacío.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtContraseña.Focus();
+                }
+                else
+                {
+                    if (usuario != null)
+                    {
+                        if (usuario.Estado == false)
+                        {
+                            MessageBox.Show("Este usuario se encuentra Inactivo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            this.Hide();
+                            FrmMenu menu = new FrmMenu();
+                            menu.Show();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credenciales incorrectas, verifique e intentelo nuevamente.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnMinizarL_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -43,9 +92,7 @@ namespace ParkApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FrmMenu form2 = new FrmMenu();
-            this.Hide();
-            form2.ShowDialog();
+            ValidarCredenciales();
         }
 
         private void panelArriba_Paint(object sender, PaintEventArgs e)
