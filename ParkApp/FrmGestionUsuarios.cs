@@ -63,18 +63,12 @@ namespace ParkApp
         {
 
 
-
-
             String NombreUsuario = txtNombreUsuario.Text;
             String Contraseña = txtContraseñaUsuario.Text;
         
-            //String Estado = comboBoxEstado.SelectedText;
-            //String Rol = comboBoxRol.SelectedText;
-
-            //string TipoVehiculo = comboBox1.SelectedItem.ToString();
+           
             ENTITY.Usuario usuario = new ENTITY.Usuario(NombreUsuario, Contraseña);
            
-
             servicioUsuario.Crear(usuario);
           
 

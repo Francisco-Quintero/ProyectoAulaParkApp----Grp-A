@@ -4,16 +4,26 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace ParkApp
 {
     public partial class FrmIngreso : Form
     {
         private ServicioTipoVehiculo servicioTipoVehiculo = new ServicioTipoVehiculo();
-        private ServicioVehiculo servicioVehiculo= new ServicioVehiculo();
+        //private ServicioVehiculo servicioVehiculo= new ServicioVehiculo();
+        private ServicioVehiculo servicioVehiculo;
         public FrmIngreso()
         {
             InitializeComponent();
+            servicioVehiculo = new ServicioVehiculo();
+
         }
 
         private void ListarTipoVehiculo()
@@ -34,12 +44,12 @@ namespace ParkApp
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblhora.Text = DateTime.Now.ToLongTimeString();
-            lblfecha.Text = DateTime.Now.ToShortDateString();
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    lblhora.Text = DateTime.Now.ToLongTimeString();
+        //    lblfecha.Text = DateTime.Now.ToShortDateString();
 
-        }
+        //}
 
         private void CapturaIngreso()
         {
@@ -68,34 +78,33 @@ namespace ParkApp
 
         private void btnRealizarIngreso_Click(object sender, EventArgs e)
         {
-         
-
-            string placaIngreso = txtPlaca.Text;
-
-           
-            // Crear una nueva instancia de Vehiculo usando la placa ingresada
-            Vehiculo vehiculo = new Vehiculo(placaIngreso);
-
-            // Intentar registrar el nuevo Vehiculo usando el servicio
             try
             {
-                bool resultado = servicioVehiculo.Crear(vehiculo);
-                // Mostrar mensaje de éxito o error
-                if (resultado)
-                {
-                    MessageBox.Show("Registro exitoso.");
-                }
-                else
-                {
-                    MessageBox.Show("Error al registrar el vehículo.");
-                }
+                // Crear una instancia de la clase Vehiculo
+                Vehiculo vehiculo = new Vehiculo();
+                
+
+                // Asignar los valores correspondientes
+                vehiculo.Placa = txtPlaca.Text;
+                vehiculo.IdTipoVehiculo = (int)boxTipoIngreso.SelectedValue;
+
+
+
+
+                // Llamar al método Crear de la clase ServicioVehiculo
+                servicioVehiculo.Crear(vehiculo);
+
+                // Mostrar un mensaje de éxito
+                MessageBox.Show("Ingreso realizado con éxito", "Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                // Mostrar un mensaje de error
+                MessageBox.Show("Error al realizar ingreso: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        
+
+
     }
 }

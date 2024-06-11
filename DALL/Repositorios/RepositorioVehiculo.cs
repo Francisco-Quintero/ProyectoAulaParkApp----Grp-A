@@ -44,20 +44,46 @@ namespace DALL.Repositorios
             }
         }
 
+        //public bool Crear(Vehiculo entidad)
+        //{
+        //    using (var Command = ConnectDB.CreateCommand())
+        //    {
+        //        Command.CommandText = "INSERT INTO Vehiculos (Placa, IdTipoVehiculo) VALUES (@Placa, @IdTipoVehiculo)";
+        //        Command.Parameters.Add("@Placa", SqlDbType.NChar, 7).Value = entidad.Placa;
+        //        Command.Parameters.Add("@IdTipoVehiculo", SqlDbType.Int).Value = entidad.IdTipoVehiculo;
+
+
+        //        try
+        //        {
+        //            ConnectDB.Open();
+        //            Command.ExecuteNonQuery();
+        //            return true;
+        //        }
+        //        catch (SqlException ex)
+        //        {
+        //            Console.WriteLine(ex.Message);
+        //            return false;
+        //        }
+        //        finally
+        //        {
+        //            ConnectDB.Close();
+        //        }
+        //    }
+        //}
+
         public bool Crear(Vehiculo entidad)
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "INSERT INTO Vehiculo (Placa, IdTipoVehiculo) VALUES (@Placa, @IdTipoVehiculo)";
-                Command.Parameters.Add("@Placa", SqlDbType.NChar, 7).Value = entidad.Placa;
+                Command.CommandText = "INSERT INTO Vehiculos (Placa, IdTipoVehiculo) VALUES (@Placa, @IdTipoVehiculo)";
+                Command.Parameters.Add("@Placa", SqlDbType.NVarChar, 50).Value = entidad.Placa;
                 Command.Parameters.Add("@IdTipoVehiculo", SqlDbType.Int).Value = entidad.IdTipoVehiculo;
-
 
                 try
                 {
                     ConnectDB.Open();
-                    Command.ExecuteNonQuery();
-                    return true;
+                    int filasAfectadas = Command.ExecuteNonQuery();
+                    return filasAfectadas > 0;
                 }
                 catch (SqlException ex)
                 {
@@ -70,6 +96,10 @@ namespace DALL.Repositorios
                 }
             }
         }
+
+
+
+
 
         public bool Eliminar(int id)
         {

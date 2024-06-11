@@ -9,12 +9,15 @@ namespace ENTITY
     public class Vehiculo
     {
 
-
+        public Vehiculo()
+        {
+            
+        }
 
         public Vehiculo(string placa)
         { 
           
-            string Placa = placa;
+            Placa = placa;
       
         
         }
@@ -27,10 +30,7 @@ namespace ENTITY
             
         }
 
-        public Vehiculo()
-        {
-            
-        }
+       
 
 
         public int IdVehiculo { get; set; }
