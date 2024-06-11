@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblfecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.boxTipoIngreso = new System.Windows.Forms.ComboBox();
             this.btnCerrarPingreso = new System.Windows.Forms.PictureBox();
             this.btnRealizarIngreso = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarPingreso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,6 +180,10 @@
             this.btnRealizarIngreso.UseVisualStyleBackColor = false;
             this.btnRealizarIngreso.Click += new System.EventHandler(this.btnRealizarIngreso_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            // 
             // FrmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -219,5 +225,6 @@
         private System.Windows.Forms.ComboBox boxTipoIngreso;
         public System.Windows.Forms.Button btnRealizarIngreso;
         public System.Windows.Forms.TextBox txtPlaca;
+        public System.Windows.Forms.Timer timer1;
     }
 }
