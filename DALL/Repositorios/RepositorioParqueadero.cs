@@ -54,7 +54,7 @@ namespace DALL.Repositorios
                 Command.CommandText = "INSERT INTO Parqueaderos (Tarifa, HoraEntrada, HoraSalida, IdVehiculo, TipoParqueadero) VALUES (@Tarifa, @HoraEntrada, @HoraSalida, @IdVehiculo, @TipoParqueadero)";
                 Command.Parameters.Add("@Tarifa", SqlDbType.Decimal).Value = entidad.Tarifa;
                 Command.Parameters.Add("@HoraEntrada", SqlDbType.DateTime).Value = entidad.HoraEntrada;
-                Command.Parameters.Add("@HoraSalida", SqlDbType.DateTime).Value = entidad.HoraSalida;
+                Command.Parameters.Add("@HoraSalida", SqlDbType.DateTime).Value = (object)entidad.HoraSalida ?? DBNull.Value; // Permitir NULL
                 Command.Parameters.Add("@IdVehiculo", SqlDbType.Int).Value = entidad.IdVehiculo;
                 Command.Parameters.Add("@TipoParqueadero", SqlDbType.Int).Value = entidad.TipoParqueadero;
 

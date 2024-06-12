@@ -17,7 +17,7 @@ namespace ParkApp
     public partial class FrmIngreso : Form
     {
         private ServicioTipoVehiculo servicioTipoVehiculo = new ServicioTipoVehiculo();
-        //private ServicioVehiculo servicioVehiculo= new ServicioVehiculo();
+      
         private ServicioVehiculo servicioVehiculo;
         private ServicioParqueadero servicioParqueadero;
         public FrmIngreso()
@@ -54,17 +54,13 @@ namespace ParkApp
 
         private void CapturaIngreso()
         {
-            //Ingreso ingreso = (Ingreso)boxTipoIngreso.SelectedItem;
-
-            //vehiculo. = txtPlaca.Text;
+        
 
         }
 
         private void btnticket_Click(object sender, EventArgs e)
         {
-            //FrmTikets form2 = new FrmTikets();
-            //form2.datoplaca.Text = txtPlaca.Text;
-            //form2.Show();
+            
         }
 
         private void btnCerrarPingreso_Click(object sender, EventArgs e)
@@ -80,38 +76,38 @@ namespace ParkApp
         private void btnRealizarIngreso_Click(object sender, EventArgs e)
         {
             try
-            {
-                // Crear una instancia de la clase Vehiculo
-                Vehiculo vehiculo = new Vehiculo();
+    {
+        // Crear una instancia de la clase Vehiculo
+        Vehiculo vehiculo = new Vehiculo
+        {
+            Placa = txtPlaca.Text,
+            IdTipoVehiculo = (int)boxTipoIngreso.SelectedValue
+        };
 
-                // Asignar los valores correspondientes
-                vehiculo.Placa = txtPlaca.Text;
-                vehiculo.IdTipoVehiculo = (int)boxTipoIngreso.SelectedValue;
+        // Llamar al método Crear de la clase ServicioVehiculo
+        servicioVehiculo.Crear(vehiculo);
 
-                // Llamar al método Crear de la clase ServicioVehiculo
-                servicioVehiculo.Crear(vehiculo);
+        // Crear una instancia de la clase Parqueadero
+        Parqueadero parqueadero = new Parqueadero
+        {
+            Tarifa = 2000, // Ajustar según tu lógica de negocio
+            HoraEntrada = DateTime.Now,
+            HoraSalida = null, // Permitir NULL hasta que se establezca una hora de salida
+            IdVehiculo = vehiculo.IdVehiculo,
+            TipoParqueadero = (int)boxTipoIngreso.SelectedValue
+        };
 
-                // Crear una instancia de la clase Parqueadero
-                Parqueadero parqueadero = new Parqueadero
-                {
-                    Tarifa = 0, // Asigna una tarifa inicial, ajusta según tu lógica
-                    HoraEntrada = DateTime.Now,
-                    HoraSalida = DateTime.MinValue, // Inicialmente, no hay hora de salida
-                    IdVehiculo = vehiculo.IdVehiculo, // Suponiendo que la propiedad IdVehiculo es auto-generada
-                    TipoParqueadero = (int)boxTipoIngreso.SelectedValue // O cualquier lógica específica para tipo de parqueadero
-                };
+ 
+        servicioParqueadero.Crear(parqueadero);
 
-                // Llamar al método Crear de la clase ServicioParqueadero
-                servicioParqueadero.Crear(parqueadero);
+   
 
-                // Mostrar un mensaje de éxito
-                MessageBox.Show("Ingreso realizado con éxito", "Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                // Mostrar un mensaje de error
-                MessageBox.Show("Error al realizar ingreso: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+    }
+    catch (Exception ex)
+    {
+        // Mostrar un mensaje de error
+        MessageBox.Show("Error al realizar ingreso: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
 
 
 

@@ -15,7 +15,7 @@ namespace BLL
             return RepositorioParqueadero.Actualizar(entidad);
         }
 
-        //public override double TarifaMinuto => 2000;
+      
 
         public bool Crear(Parqueadero entidad)
         {
@@ -34,7 +34,7 @@ namespace BLL
 
         public double CalcularTarifa()
         {
-            TimeSpan duracion = Parqueadero.HoraSalida - Parqueadero.HoraEntrada;
+            TimeSpan duracion = (TimeSpan)(Parqueadero.HoraSalida - Parqueadero.HoraEntrada);
             decimal horas = (decimal)duracion.TotalHours;
 
             return (double)(horas * Parqueadero.Tarifa);
