@@ -140,5 +140,10 @@ namespace DALL.Repositorios
             var rol = new Rol(reader.GetInt32(0), reader.GetString(1).Trim(), reader.GetBoolean(2));
             return rol;
         }
+
+        public List<Rol> FiltrarVehiculo(string textoBusqueda)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

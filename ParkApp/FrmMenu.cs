@@ -45,7 +45,7 @@ namespace ParkApp
                 formulario.Show();
                 formulario.BringToFront();
             }
-            
+
             else
             {
                 formulario.BringToFront();
@@ -159,6 +159,39 @@ namespace ParkApp
                 MessageBox.Show("Error al cargar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
+        private void FiltrarDataGridView(DataGridView dataGridView, TextBox textBox)
+        {
+            // Convertimos el texto de búsqueda a minúsculas para hacer la comparación sin distinción de mayúsculas o minúsculas
+            string filtro = textBox.Text.ToLower();
+
+            // Iteramos sobre las filas del DataGridView
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                bool filaVisible = false;
+
+                // Iteramos sobre las celdas de la fila
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    // Verificamos si el valor de la celda contiene el texto de búsqueda
+                    if (cell.Value != null && cell.Value.ToString().ToLower().Contains(filtro))
+                    {
+                        // Si alguna celda contiene el texto de búsqueda, mostramos la fila y salimos del bucle interno
+                        filaVisible = true;
+                        break;
+                    }
+                }
+
+                // Mostramos u ocultamos la fila según si alguna de sus celdas contiene el texto de búsqueda
+                row.Visible = filaVisible;
+            }
+        }
+
+
+
+
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             CargarVehiculosEstacionados();
@@ -167,6 +200,21 @@ namespace ParkApp
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             CargarVehiculosEstacionados();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            FiltrarDataGridView(dataGridEstacionados, txtBusquedaEstacionado);
+        }
+
+        private void txtBusquedaEstacionado_TextChanged(object sender, EventArgs e)
+        {
+            ServicioVehiculo servicioVehiculo = new ServicioVehiculo();
+
+            var textoBusqueda = txtBusquedaEstacionado.Text;
+            var resultados = servicioVehiculo.FiltrarVehiculos(textoBusqueda);
+            dataGridEstacionados.DataSource = resultados;
+            
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

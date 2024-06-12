@@ -11,5 +11,7 @@ namespace DALL
         bool Eliminar(int id);
 
         List<T> Listar();
+
+        List<T> FiltrarVehiculo(string textoBusqueda);
     }
 }

@@ -145,5 +145,10 @@ namespace DALL.Repositorios
                 TipoParqueadero = (int)reader["TipoParqueadero"]
             };
         }
+
+        public List<Parqueadero> FiltrarVehiculo(string textoBusqueda)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

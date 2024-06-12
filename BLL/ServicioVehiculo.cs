@@ -31,5 +31,13 @@ namespace BLL
         {
             return RepositorioVehiculo.Listar();
         }
+
+
+        public List<Vehiculo> FiltrarVehiculos(string textoBusqueda)
+        {
+            return RepositorioVehiculo.FiltrarVehiculos(textoBusqueda);
+        }
+
+
     }
 }

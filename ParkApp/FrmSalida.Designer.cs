@@ -39,7 +39,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.placa = new System.Windows.Forms.TextBox();
+            this.txtPlacaSalida = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnSalida = new System.Windows.Forms.Button();
@@ -181,16 +181,16 @@
             this.label7.TabIndex = 46;
             this.label7.Text = "HORA DE ENTRADA";
             // 
-            // placa
+            // txtPlacaSalida
             // 
-            this.placa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.placa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
-            this.placa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.placa.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.placa.Location = new System.Drawing.Point(198, 174);
-            this.placa.Name = "placa";
-            this.placa.Size = new System.Drawing.Size(298, 23);
-            this.placa.TabIndex = 45;
+            this.txtPlacaSalida.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPlacaSalida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txtPlacaSalida.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlacaSalida.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlacaSalida.Location = new System.Drawing.Point(198, 174);
+            this.txtPlacaSalida.Name = "txtPlacaSalida";
+            this.txtPlacaSalida.Size = new System.Drawing.Size(298, 23);
+            this.txtPlacaSalida.TabIndex = 45;
             // 
             // label1
             // 
@@ -333,7 +333,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.placa);
+            this.Controls.Add(this.txtPlacaSalida);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -357,7 +357,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox placa;
+        private System.Windows.Forms.TextBox txtPlacaSalida;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnSalida;

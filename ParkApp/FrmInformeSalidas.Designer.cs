@@ -31,9 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePickerSalidas = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridSalidasVehiculos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,44 +48,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalidasVehiculos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSalidasVe)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(235, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 19);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "SELECCIONE FECHA";
-            // 
-            // dateTimePickerSalidas
-            // 
-            this.dateTimePickerSalidas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePickerSalidas.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSalidas.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePickerSalidas.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
-            this.dateTimePickerSalidas.CalendarTitleBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dateTimePickerSalidas.CalendarTitleForeColor = System.Drawing.SystemColors.Highlight;
-            this.dateTimePickerSalidas.CalendarTrailingForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dateTimePickerSalidas.Location = new System.Drawing.Point(239, 53);
-            this.dateTimePickerSalidas.Name = "dateTimePickerSalidas";
-            this.dateTimePickerSalidas.Size = new System.Drawing.Size(271, 22);
-            this.dateTimePickerSalidas.TabIndex = 41;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(235, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 22);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Filtros";
             // 
             // dataGridSalidasVehiculos
             // 
@@ -213,7 +172,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "AUTOMOVIL",
             "MOTOCICLETA"});
-            this.comboBox1.Location = new System.Drawing.Point(616, 55);
+            this.comboBox1.Location = new System.Drawing.Point(420, 55);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(271, 24);
             this.comboBox1.TabIndex = 44;
@@ -224,7 +183,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(612, 33);
+            this.label3.Location = new System.Drawing.Point(416, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 19);
             this.label3.TabIndex = 45;
@@ -270,7 +229,7 @@
             this.btnBuscarHSalidas.UseVisualStyleBackColor = false;
             this.btnBuscarHSalidas.Click += new System.EventHandler(this.btnBuscarHSalidas_Click);
             // 
-            // InformeSalidas
+            // FrmInformeSalidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -282,13 +241,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnCerrarSalidasVe);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePickerSalidas);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridSalidasVehiculos);
             this.Controls.Add(this.lblSalidas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "InformeSalidas";
+            this.Name = "FrmInformeSalidas";
             this.Text = "InformeSalidas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSalidasVehiculos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSalidasVe)).EndInit();
@@ -298,10 +254,6 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePickerSalidas;
-        public System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridSalidasVehiculos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

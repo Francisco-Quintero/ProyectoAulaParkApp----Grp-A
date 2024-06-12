@@ -143,5 +143,10 @@ namespace DALL.Repositorios
             }
             return listaUsuarios;
         }
+
+        public List<Usuario> FiltrarVehiculo(string textoBusqueda)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

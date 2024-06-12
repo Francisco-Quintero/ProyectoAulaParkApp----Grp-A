@@ -19,11 +19,12 @@ namespace ParkApp
         private ServicioTipoVehiculo servicioTipoVehiculo = new ServicioTipoVehiculo();
         //private ServicioVehiculo servicioVehiculo= new ServicioVehiculo();
         private ServicioVehiculo servicioVehiculo;
+        private ServicioParqueadero servicioParqueadero;
         public FrmIngreso()
         {
             InitializeComponent();
             servicioVehiculo = new ServicioVehiculo();
-
+            servicioParqueadero = new ServicioParqueadero();
         }
 
         private void ListarTipoVehiculo()
@@ -76,8 +77,22 @@ namespace ParkApp
             ListarTipoVehiculo();
         }
 
+
+        public void pruebaMostrar() 
+        {
+        
+        
+        
+        
+        
+        
+        }
+        
         private void btnRealizarIngreso_Click(object sender, EventArgs e)
         {
+
+
+
             try
             {
                 // Crear una instancia de la clase Vehiculo
@@ -93,7 +108,16 @@ namespace ParkApp
 
                 // Llamar al método Crear de la clase ServicioVehiculo
                 servicioVehiculo.Crear(vehiculo);
+                Parqueadero parqueadero = new Parqueadero();
 
+                // Asignar los valores correspondientes
+                parqueadero.Tarifa = 10.00m; // Supongamos que la tarifa es $10.00 por hora
+                parqueadero.HoraEntrada = DateTime.Now;
+                parqueadero.IdVehiculo = vehiculo.IdVehiculo; // Aquí necesitas el ID del vehículo que acabas de crear
+                parqueadero.TipoParqueadero = 1; // Esto depende de cómo estés manejando los tipos de parqueadero
+
+                // Llamar al método Crear de la clase ServicioParqueadero
+                servicioParqueadero.Crear(parqueadero);
                 // Mostrar un mensaje de éxito
                 MessageBox.Show("Ingreso realizado con éxito", "Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -108,6 +132,11 @@ namespace ParkApp
         {
             lblhora.Text = DateTime.Now.ToLongTimeString();
             lblfecha.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void btnRegistarSalida_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

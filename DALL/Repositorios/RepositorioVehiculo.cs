@@ -44,32 +44,7 @@ namespace DALL.Repositorios
             }
         }
 
-        //public bool Crear(Vehiculo entidad)
-        //{
-        //    using (var Command = ConnectDB.CreateCommand())
-        //    {
-        //        Command.CommandText = "INSERT INTO Vehiculos (Placa, IdTipoVehiculo) VALUES (@Placa, @IdTipoVehiculo)";
-        //        Command.Parameters.Add("@Placa", SqlDbType.NChar, 7).Value = entidad.Placa;
-        //        Command.Parameters.Add("@IdTipoVehiculo", SqlDbType.Int).Value = entidad.IdTipoVehiculo;
-
-
-        //        try
-        //        {
-        //            ConnectDB.Open();
-        //            Command.ExecuteNonQuery();
-        //            return true;
-        //        }
-        //        catch (SqlException ex)
-        //        {
-        //            Console.WriteLine(ex.Message);
-        //            return false;
-        //        }
-        //        finally
-        //        {
-        //            ConnectDB.Close();
-        //        }
-        //    }
-        //}
+        
 
         public bool Crear(Vehiculo entidad)
         {
@@ -162,6 +137,57 @@ namespace DALL.Repositorios
                 }
             }
             return listaVehiculos;
+        }
+
+        public List<Vehiculo> FiltrarVehiculos(string textoBusqueda)
+        {
+            var listaVehiculos = new List<Vehiculo>();
+
+            using (var Command = ConnectDB.CreateCommand())
+            {
+                Command.CommandText = "SELECT IdVehiculo, Placa, IdTipoVehiculo " +
+                                      "FROM Vehiculos " +
+                                      "WHERE Placa LIKE @TextoBusqueda " +
+                                      "OR CAST(IdVehiculo AS NVARCHAR) LIKE @TextoBusqueda " +
+                                      "OR CAST(IdTipoVehiculo AS NVARCHAR) LIKE @TextoBusqueda";
+
+                Command.Parameters.Add("@TextoBusqueda", SqlDbType.NVarChar).Value = "%" + textoBusqueda + "%";
+
+                try
+                {
+                    ConnectDB.Open();
+                    using (var reader = Command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var vehiculo = new Vehiculo
+                            {
+                                IdVehiculo = reader.GetInt32(reader.GetOrdinal("IdVehiculo")),
+                                Placa = reader.GetString(reader.GetOrdinal("Placa")),
+                                IdTipoVehiculo = reader.GetInt32(reader.GetOrdinal("IdTipoVehiculo"))
+                            };
+                            listaVehiculos.Add(vehiculo);
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    // Manejo de excepciones, log o cualquier otra acción requerida
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    ConnectDB.Close();
+                }
+            }
+            return listaVehiculos;
+
+
+        }
+
+        public List<Vehiculo> FiltrarVehiculo(string textoBusqueda)
+        {
+            throw new NotImplementedException();
         }
     }
 }

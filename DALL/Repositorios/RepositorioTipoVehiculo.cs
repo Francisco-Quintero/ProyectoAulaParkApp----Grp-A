@@ -148,5 +148,10 @@ namespace DALL.Repositorios
             //};
             return tipoVehiculo;    
         }
+
+        public List<TipoVehiculo> FiltrarVehiculo(string textoBusqueda)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

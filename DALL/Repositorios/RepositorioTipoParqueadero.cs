@@ -139,5 +139,10 @@ namespace DALL.Repositorios
             var tipoParqueadero = new TipoParqueadero(reader.GetString(0).Trim(), reader.GetString(1).Trim());
             return tipoParqueadero;
         }
+
+        public List<TipoParqueadero> FiltrarVehiculo(string textoBusqueda)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
