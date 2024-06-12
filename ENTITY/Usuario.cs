@@ -19,7 +19,9 @@ namespace ENTITY
             Nombre = nombre;
             Contraseña = contraseña;
         }
-
+        public Usuario(string nombre, string contraseña, bool estado, int idRol) : this(nombre, contraseña)
+        {
+        }
         public Usuario(int idUsuario, string nombre, string contraseña, DateTime fechaCreacion, bool estado, int idRol)
         {
             IdUsuario = idUsuario;

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuVertical = new System.Windows.Forms.Panel();
             this.btnTipoVehiculo = new System.Windows.Forms.Button();
             this.btnNuevoUsuario = new System.Windows.Forms.Button();
@@ -95,15 +95,15 @@
             this.btnTipoVehiculo.FlatAppearance.BorderSize = 0;
             this.btnTipoVehiculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnTipoVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTipoVehiculo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTipoVehiculo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoVehiculo.ForeColor = System.Drawing.Color.White;
             this.btnTipoVehiculo.Image = global::ParkApp.Properties.Resources.trafico__1_;
             this.btnTipoVehiculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTipoVehiculo.Location = new System.Drawing.Point(24, 520);
+            this.btnTipoVehiculo.Location = new System.Drawing.Point(24, 518);
             this.btnTipoVehiculo.Name = "btnTipoVehiculo";
             this.btnTipoVehiculo.Size = new System.Drawing.Size(250, 40);
             this.btnTipoVehiculo.TabIndex = 29;
-            this.btnTipoVehiculo.Text = "NUEVO VEHICULO";
+            this.btnTipoVehiculo.Text = "GESTION VEHICULO";
             this.btnTipoVehiculo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTipoVehiculo.UseVisualStyleBackColor = false;
             this.btnTipoVehiculo.Click += new System.EventHandler(this.btnTipoVehiculo_Click);
@@ -122,7 +122,7 @@
             this.btnNuevoUsuario.Name = "btnNuevoUsuario";
             this.btnNuevoUsuario.Size = new System.Drawing.Size(250, 40);
             this.btnNuevoUsuario.TabIndex = 28;
-            this.btnNuevoUsuario.Text = "NUEVO USUARIO";
+            this.btnNuevoUsuario.Text = "GESTION USUARIO";
             this.btnNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevoUsuario.UseVisualStyleBackColor = false;
             this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click);
@@ -377,48 +377,48 @@
             this.dataGridEstacionados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
             this.dataGridEstacionados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridEstacionados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEstacionados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEstacionados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridEstacionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridEstacionados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PlacaEntrada,
             this.TipoDeVihiculoEstacionado,
             this.FechaIngresoEstacionado,
             this.HoraIngresoEstacionado});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridEstacionados.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridEstacionados.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridEstacionados.EnableHeadersVisualStyles = false;
             this.dataGridEstacionados.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridEstacionados.Location = new System.Drawing.Point(189, 262);
             this.dataGridEstacionados.Name = "dataGridEstacionados";
             this.dataGridEstacionados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridEstacionados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridEstacionados.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridEstacionados.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridEstacionados.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridEstacionados.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridEstacionados.RowTemplate.Height = 24;
             this.dataGridEstacionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridEstacionados.Size = new System.Drawing.Size(768, 361);
@@ -458,6 +458,7 @@
             this.CBVehiculosEstacionados.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CBVehiculosEstacionados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
             this.CBVehiculosEstacionados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CBVehiculosEstacionados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBVehiculosEstacionados.ForeColor = System.Drawing.Color.White;
             this.CBVehiculosEstacionados.FormattingEnabled = true;
             this.CBVehiculosEstacionados.Items.AddRange(new object[] {
@@ -466,7 +467,7 @@
             "TODOS"});
             this.CBVehiculosEstacionados.Location = new System.Drawing.Point(141, 56);
             this.CBVehiculosEstacionados.Name = "CBVehiculosEstacionados";
-            this.CBVehiculosEstacionados.Size = new System.Drawing.Size(245, 24);
+            this.CBVehiculosEstacionados.Size = new System.Drawing.Size(245, 26);
             this.CBVehiculosEstacionados.TabIndex = 37;
             this.CBVehiculosEstacionados.SelectedIndexChanged += new System.EventHandler(this.CBVehiculosEstacionados_SelectedIndexChanged);
             // 
