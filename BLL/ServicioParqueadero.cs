@@ -1,5 +1,6 @@
 ﻿using DALL.Repositorios;
 using ENTITY;
+using System;
 using System.Collections.Generic;
 
 namespace BLL
@@ -7,6 +8,7 @@ namespace BLL
     public class ServicioParqueadero : ICrud<Parqueadero>
     {
         private RepositorioParqueadero RepositorioParqueadero = new RepositorioParqueadero();
+        private Parqueadero Parqueadero = new Parqueadero();
 
         public bool Actualizar(Parqueadero entidad)
         {
@@ -28,6 +30,15 @@ namespace BLL
         public List<Parqueadero> Listar()
         {
             return RepositorioParqueadero.Listar();
+        }
+
+        public double CalcularTarifa()
+        {
+            TimeSpan duracion = Parqueadero.HoraSalida - Parqueadero.HoraEntrada;
+            double horas = (double)duracion.TotalHours;
+
+            return horas * Parqueadero.TarifaMinuto;
+
         }
     }
 }

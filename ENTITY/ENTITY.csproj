@@ -42,8 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Parqueadero.cs" />
-    <Compile Include="ParqueaderoCarro.cs" />
-    <Compile Include="ParqueaderoMoto.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Ticket.cs" />
