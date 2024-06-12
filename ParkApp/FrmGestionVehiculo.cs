@@ -21,12 +21,11 @@ namespace ParkApp
         public TipoVehiculo1()
         {
             InitializeComponent();
-            Mostrar();
+            
             servicioTipoVehiculo = new ServicioTipoVehiculo();
 
         }
 
-        string conexion = "Data Source=LAPTOP-CHO7PHK5\\SQLEXPRESS;Initial Catalog=ParckAppDB;Integrated Security=True;Encrypt=False";
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -36,26 +35,91 @@ namespace ParkApp
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             RegistrarVehiculo();
+            Mostrar();
         }
 
         private void btnMostrarGestions_Click(object sender, EventArgs e)
         {
-
             Mostrar();
+
         }
 
+     
+        public void Mostrar() 
+        {
+            
+            List<TipoVehiculo> tiposVehiculo = servicioTipoVehiculo.Listar();
+
+            
+            dataGridGestionVehiculos.DataSource = tiposVehiculo;
+
+        }
+
+        private void ModificarTipoVehiculo(int idTipoVehiculo)
+        {
+           
+            TipoVehiculo tipoVehiculo = servicioTipoVehiculo.Listar().FirstOrDefault(tv => tv.IdTipoVehiculo == idTipoVehiculo);
+
+           
+            if (tipoVehiculo != null)
+            {
+               
+                tipoVehiculo.Descripcion = txtTipoVehiculo.Text; 
+
+        
+                bool resultado = servicioTipoVehiculo.Actualizar(tipoVehiculo);
+
+            
+                if (resultado)
+                {
+                    MessageBox.Show("Registro actualizado correctamente.");
+
+                   
+                    btnMostrarGestions_Click(this, EventArgs.Empty);
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar el registro.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encontró ningún registro con el ID proporcionado.");
+            }
+        }
+
+
+        private void EliminarTipoVehiculo(int idTipoVehiculo)
+        {
+          
+            bool resultado = servicioTipoVehiculo.Eliminar(idTipoVehiculo);
+
+         
+            if (resultado)
+            {
+                MessageBox.Show("Registro eliminado correctamente.");
+
+                
+                btnMostrarGestions_Click(this, EventArgs.Empty);
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar el registro.");
+            }
+        }
 
         public void RegistrarVehiculo() 
         {
             string descripcion = txtTipoVehiculo.Text;
 
-            // Crear una nueva instancia de ENTITY.TipoVehiculo usando fully qualified name
+            
             TipoVehiculo tipoVehiculo = new TipoVehiculo(descripcion);
 
-            // Llamar al servicio para registrar el nuevo TipoVehiculo
+            
             bool resultado = servicioTipoVehiculo.Crear(tipoVehiculo);
+         
 
-            // Mostrar mensaje de éxito o error
+
             if (resultado)
             {
                 MessageBox.Show("Registro exitoso.");
@@ -65,90 +129,47 @@ namespace ParkApp
                 MessageBox.Show("Error al registrar el Tipo de Vehículo.");
             }
 
-        }
-
-        public void Mostrar() 
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                using (SqlConnection cn = new SqlConnection(conexion))
-                {
-                    SqlDataAdapter da = new SqlDataAdapter("select * from TipoVehiculos ", cn);
-                    da.SelectCommand.CommandType = CommandType.Text;
-                    cn.Open();
-                    da.Fill(dt);
-                }
-
-                dataGridGestionVehiculos.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al mostrar los datos: " + ex.Message);
-            }
-        }
-
-
-        public void ModificarVehiculo() 
-        {
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(conexion))
-                {
-                    SqlCommand cmd = new SqlCommand("UPDATE TipoVehiculos SET Descripcion = @Descripcion WHERE IdTipoVehiculo = @IdTipoVehiculo", cn);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@Descripcion", txtTipoVehiculo.Text);
-                    cmd.Parameters.AddWithValue("@IdTipoVehiculo", int.Parse(txtModificar.Text));
-
-                    cn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-
-                Mostrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al modificar los datos: " + ex.Message);
-            }
+            txtModificar.Text = "";
+            txtTipoVehiculo.Text = "";
 
         }
 
-        public void EliminarVehiculo()
-        {
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(conexion))
-                {
+      
 
-                    SqlCommand cmd = new SqlCommand("DELETE FROM TipoVehiculos WHERE IdTipoVehiculo = @IdTipoVehiculo", cn);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@IdTipoVehiculo", int.Parse(txtModificar.Text));
+        
 
-
-                    cn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-                Mostrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al eliminar los datos: " + ex.Message);
-            }
-
-        }
+       
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificarVehiculo();
+            
+            if (int.TryParse(txtModificar.Text, out int idTipoVehiculo))
+            {
+                ModificarTipoVehiculo(idTipoVehiculo);
+                txtModificar.Text = "";
+                txtTipoVehiculo.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un ID válido.");
+            }
         }
 
         private void TipoVehiculo1_Load(object sender, EventArgs e)
         {
-            
+            Mostrar();
         }
-
+        
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            EliminarVehiculo();
+            if (int.TryParse(txtModificar.Text, out int idTipoVehiculo))
+            {
+                EliminarTipoVehiculo(idTipoVehiculo);
+                txtModificar.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un ID válido.");
+            }
         }
 
     }

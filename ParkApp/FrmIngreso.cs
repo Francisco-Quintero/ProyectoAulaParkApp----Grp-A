@@ -104,7 +104,10 @@ namespace ParkApp
             }
         }
 
-
-
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToLongTimeString();
+            lblfecha.Text = DateTime.Now.ToShortDateString();
+        }
     }
 }
