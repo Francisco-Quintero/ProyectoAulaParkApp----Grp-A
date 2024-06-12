@@ -19,11 +19,12 @@ namespace ParkApp
         private ServicioTipoVehiculo servicioTipoVehiculo = new ServicioTipoVehiculo();
         //private ServicioVehiculo servicioVehiculo= new ServicioVehiculo();
         private ServicioVehiculo servicioVehiculo;
+        private ServicioParqueadero servicioParqueadero;
         public FrmIngreso()
         {
             InitializeComponent();
             servicioVehiculo = new ServicioVehiculo();
-
+            servicioParqueadero = new ServicioParqueadero();
         }
 
         private void ListarTipoVehiculo()
@@ -78,6 +79,42 @@ namespace ParkApp
 
         private void btnRealizarIngreso_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Crear una instancia de la clase Vehiculo
+                Vehiculo vehiculo = new Vehiculo();
+
+                // Asignar los valores correspondientes
+                vehiculo.Placa = txtPlaca.Text;
+                vehiculo.IdTipoVehiculo = (int)boxTipoIngreso.SelectedValue;
+
+                // Llamar al método Crear de la clase ServicioVehiculo
+                servicioVehiculo.Crear(vehiculo);
+
+                // Crear una instancia de la clase Parqueadero
+                Parqueadero parqueadero = new Parqueadero
+                {
+                    Tarifa = 0, // Asigna una tarifa inicial, ajusta según tu lógica
+                    HoraEntrada = DateTime.Now,
+                    HoraSalida = DateTime.MinValue, // Inicialmente, no hay hora de salida
+                    IdVehiculo = vehiculo.IdVehiculo, // Suponiendo que la propiedad IdVehiculo es auto-generada
+                    TipoParqueadero = (int)boxTipoIngreso.SelectedValue // O cualquier lógica específica para tipo de parqueadero
+                };
+
+                // Llamar al método Crear de la clase ServicioParqueadero
+                servicioParqueadero.Crear(parqueadero);
+
+                // Mostrar un mensaje de éxito
+                MessageBox.Show("Ingreso realizado con éxito", "Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                // Mostrar un mensaje de error
+                MessageBox.Show("Error al realizar ingreso: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
             try
             {
                 // Crear una instancia de la clase Vehiculo
