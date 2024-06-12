@@ -35,9 +35,9 @@ namespace BLL
         public double CalcularTarifa()
         {
             TimeSpan duracion = Parqueadero.HoraSalida - Parqueadero.HoraEntrada;
-            double horas = (double)duracion.TotalHours;
+            decimal horas = (decimal)duracion.TotalHours;
 
-            return horas * Parqueadero.TarifaMinuto;
+            return (double)(horas * Parqueadero.Tarifa);
 
         }
     }
