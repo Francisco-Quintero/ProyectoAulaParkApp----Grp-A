@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL;
+using ENTITY;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -26,24 +29,11 @@ namespace ParkApp
         }
 
 
-        //private void AbrirFormEnPanel(object Formhijo)
-        //{
-        //    if (this.panelformularios.Controls.Count > 0)
-        //        this.panelformularios.Controls.RemoveAt(0);
-        //    Form fh = Formhijo as Form;
-        //    fh.TopLevel = false;
-        //    fh.Dock = DockStyle.Fill;
-        //    this.panelformularios.Controls.Add(fh);
-        //    this.panelformularios.Tag = fh;
-        //    fh.Show();
-        //}
-
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
-            formulario = panelformularios.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
-                                                                                     //si el formulario/instancia no existe
+            formulario = panelformularios.Controls.OfType<MiForm>().FirstOrDefault();
             if (formulario == null)
             {
                 formulario = new MiForm();
@@ -55,7 +45,7 @@ namespace ParkApp
                 formulario.Show();
                 formulario.BringToFront();
             }
-            //si el formulario/instancia existe
+            
             else
             {
                 formulario.BringToFront();
@@ -154,6 +144,29 @@ namespace ParkApp
         private void btnTipoVehiculo_Click(object sender, EventArgs e)
         {
             AbrirFormulario<TipoVehiculo1>();
+        }
+
+        private void CargarVehiculosEstacionados()
+        {
+            try
+            {
+                ServicioVehiculo servicioVehiculo = new ServicioVehiculo();
+                List<Vehiculo> listaVehiculos = servicioVehiculo.Listar();
+                dataGridEstacionados.DataSource = listaVehiculos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            CargarVehiculosEstacionados();
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            CargarVehiculosEstacionados();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
