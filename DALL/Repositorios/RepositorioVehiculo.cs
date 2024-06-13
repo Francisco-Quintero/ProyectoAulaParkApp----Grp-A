@@ -16,6 +16,25 @@ namespace DALL.Repositorios
         {
         }
 
+        private bool ExecuteNonQuery(SqlCommand command)
+        {
+            try
+            {
+                ConnectDB.Open();
+                return command.ExecuteNonQuery() > 0;
+            }
+            catch (SqlException ex)
+            {
+                
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+            finally
+            {
+                ConnectDB.Close();
+            }
+        }
+
         public bool Actualizar(Vehiculo entidad)
         {
             using (var Command = ConnectDB.CreateCommand())
@@ -133,6 +152,10 @@ namespace DALL.Repositorios
             return listaVehiculos;
         }
 
+
+
+
+
         public List<Vehiculo> FiltrarVehiculos(string textoBusqueda)
         {
             var listaVehiculos = new List<Vehiculo>();
@@ -177,6 +200,17 @@ namespace DALL.Repositorios
                 }
             }
             return listaVehiculos;
+        }
+
+        public bool EliminarPorPlaca(string placa)
+        {
+            using (var command = ConnectDB.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM Vehiculos WHERE Placa = @Placa";
+                command.Parameters.Add("@Placa", SqlDbType.NVarChar, 50).Value = placa;
+
+                return ExecuteNonQuery(command);
+            }
         }
 
         public List<Vehiculo> FiltrarVehiculo(string textoBusqueda)

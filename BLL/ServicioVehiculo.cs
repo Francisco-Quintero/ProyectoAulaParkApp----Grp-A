@@ -32,7 +32,10 @@ namespace BLL
             return RepositorioVehiculo.Listar();
         }
 
-
+        public bool EliminarPorPlaca(string placa)
+        {
+            return RepositorioVehiculo.EliminarPorPlaca(placa);
+        }
         public List<Vehiculo> FiltrarVehiculos(string textoBusqueda)
         {
             return RepositorioVehiculo.FiltrarVehiculos(textoBusqueda);
