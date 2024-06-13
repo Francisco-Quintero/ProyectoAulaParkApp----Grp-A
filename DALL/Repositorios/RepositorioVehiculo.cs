@@ -67,9 +67,10 @@ namespace DALL.Repositorios
         {
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "INSERT INTO Vehiculos (Placa, IdTipoVehiculo) VALUES (@Placa, @IdTipoVehiculo)";
-                Command.Parameters.Add("@Placa", SqlDbType.NVarChar, 50).Value = entidad.Placa;
+                Command.CommandText = "INSERT INTO Vehiculos (Placa, IdTipoVehiculo, Tarifa) VALUES (@Placa, @IdTipoVehiculo, @Tarifa)";
+                Command.Parameters.Add("@Placa", SqlDbType.NChar, 7).Value = entidad.Placa;
                 Command.Parameters.Add("@IdTipoVehiculo", SqlDbType.Int).Value = entidad.IdTipoVehiculo;
+                Command.Parameters.Add("@Tarifa", SqlDbType.Decimal).Value = entidad.Tarifa;
 
                 try
                 {
@@ -79,6 +80,7 @@ namespace DALL.Repositorios
                 }
                 catch (SqlException ex)
                 {
+                    // Manejo de excepciones, log o cualquier otra acción requerida
                     Console.WriteLine(ex.Message);
                     return false;
                 }

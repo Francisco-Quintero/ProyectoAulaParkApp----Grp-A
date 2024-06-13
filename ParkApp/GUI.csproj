@@ -53,18 +53,6 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInformeIngresos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmInformeIngresos.Designer.cs">
-      <DependentUpon>FrmInformeIngresos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmInformeSalidas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmInformeSalidas.Designer.cs">
-      <DependentUpon>FrmInformeSalidas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,12 +73,6 @@
     <Compile Include="FrmSalida.Designer.cs">
       <DependentUpon>FrmSalida.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTikets.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTikets.Designer.cs">
-      <DependentUpon>FrmTikets.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmGestionVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +87,6 @@
     </Compile>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmInformeIngresos.resx">
-      <DependentUpon>FrmInformeIngresos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmInformeSalidas.resx">
-      <DependentUpon>FrmInformeSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngreso.resx">
       <DependentUpon>FrmIngreso.cs</DependentUpon>
@@ -130,9 +106,6 @@
     </Compile>
     <EmbeddedResource Include="FrmSalida.resx">
       <DependentUpon>FrmSalida.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTikets.resx">
-      <DependentUpon>FrmTikets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionVehiculo.resx">
       <DependentUpon>FrmGestionVehiculo.cs</DependentUpon>

@@ -87,12 +87,7 @@ namespace ParkApp
             AbrirFormulario<FrmIngreso>();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //AbrirFormEnPanel(new InformeSalidas());
-            AbrirFormulario<FrmInformeSalidas>();
-        }
-
+       
         private void button5_Click(object sender, EventArgs e)
         {
             //AbrirFormEnPanel(new Salidas());
@@ -115,12 +110,7 @@ namespace ParkApp
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnHistorialIngresos_Click(object sender, EventArgs e)
-        {
-            //AbrirFormEnPanel(new InformeIngresos());
-            AbrirFormulario<FrmInformeIngresos>();
-        }
-
+        
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
 
@@ -164,27 +154,27 @@ namespace ParkApp
 
         private void FiltrarDataGridView(DataGridView dataGridView, TextBox textBox)
         {
-            // Convertimos el texto de búsqueda a minúsculas para hacer la comparación sin distinción de mayúsculas o minúsculas
+            
             string filtro = textBox.Text.ToLower();
 
-            // Iteramos sobre las filas del DataGridView
+            
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
                 bool filaVisible = false;
 
-                // Iteramos sobre las celdas de la fila
+                
                 foreach (DataGridViewCell cell in row.Cells)
                 {
-                    // Verificamos si el valor de la celda contiene el texto de búsqueda
+                   
                     if (cell.Value != null && cell.Value.ToString().ToLower().Contains(filtro))
                     {
-                        // Si alguna celda contiene el texto de búsqueda, mostramos la fila y salimos del bucle interno
+                        
                         filaVisible = true;
                         break;
                     }
                 }
 
-                // Mostramos u ocultamos la fila según si alguna de sus celdas contiene el texto de búsqueda
+                
                 row.Visible = filaVisible;
             }
         }

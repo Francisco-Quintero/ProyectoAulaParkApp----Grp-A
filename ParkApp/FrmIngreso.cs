@@ -104,15 +104,12 @@ namespace ParkApp
                 vehiculo.IdTipoVehiculo = (int)boxTipoIngreso.SelectedValue;
 
 
-
-
                 // Llamar al método Crear de la clase ServicioVehiculo
                 servicioVehiculo.Crear(vehiculo);
                 Parqueadero parqueadero = new Parqueadero();
 
                 // Asignar los valores correspondientes
                 parqueadero.Tarifa = 10.00m; // Supongamos que la tarifa es $10.00 por hora
-                parqueadero.HoraEntrada = DateTime.Now;
                 parqueadero.IdVehiculo = vehiculo.IdVehiculo; // Aquí necesitas el ID del vehículo que acabas de crear
                 parqueadero.TipoParqueadero = 1; // Esto depende de cómo estés manejando los tipos de parqueadero
 

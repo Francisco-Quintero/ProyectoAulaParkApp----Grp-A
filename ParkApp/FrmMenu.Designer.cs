@@ -280,7 +280,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(385, 132);
+            this.btnBuscar.Location = new System.Drawing.Point(390, 97);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(195, 35);
             this.btnBuscar.TabIndex = 72;
@@ -334,7 +334,7 @@
             this.dataGridEstacionados.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridEstacionados.RowTemplate.Height = 24;
             this.dataGridEstacionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridEstacionados.Size = new System.Drawing.Size(643, 381);
+            this.dataGridEstacionados.Size = new System.Drawing.Size(643, 378);
             this.dataGridEstacionados.TabIndex = 71;
             // 
             // btnMostrar
@@ -345,11 +345,11 @@
             this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrar.ForeColor = System.Drawing.Color.White;
-            this.btnMostrar.Location = new System.Drawing.Point(832, 287);
+            this.btnMostrar.Location = new System.Drawing.Point(370, 214);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(195, 35);
+            this.btnMostrar.Size = new System.Drawing.Size(243, 35);
             this.btnMostrar.TabIndex = 57;
-            this.btnMostrar.Text = "MOSTRAR";
+            this.btnMostrar.Text = "ACTUALIZAR INFORME";
             this.btnMostrar.UseVisualStyleBackColor = false;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
@@ -360,7 +360,7 @@
             this.txtBusquedaEstacionado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBusquedaEstacionado.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusquedaEstacionado.ForeColor = System.Drawing.Color.White;
-            this.txtBusquedaEstacionado.Location = new System.Drawing.Point(365, 85);
+            this.txtBusquedaEstacionado.Location = new System.Drawing.Point(370, 68);
             this.txtBusquedaEstacionado.Name = "txtBusquedaEstacionado";
             this.txtBusquedaEstacionado.Size = new System.Drawing.Size(245, 23);
             this.txtBusquedaEstacionado.TabIndex = 54;
@@ -372,7 +372,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(381, 43);
+            this.label11.Location = new System.Drawing.Point(379, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(206, 23);
             this.label11.TabIndex = 53;
@@ -384,7 +384,7 @@
             this.lblEntradas.AutoSize = true;
             this.lblEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntradas.ForeColor = System.Drawing.Color.White;
-            this.lblEntradas.Location = new System.Drawing.Point(257, 211);
+            this.lblEntradas.Location = new System.Drawing.Point(256, 168);
             this.lblEntradas.Name = "lblEntradas";
             this.lblEntradas.Size = new System.Drawing.Size(453, 36);
             this.lblEntradas.TabIndex = 36;
