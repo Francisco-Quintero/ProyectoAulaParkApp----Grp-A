@@ -24,7 +24,7 @@ namespace DALL.Repositorios
                 Command.Parameters.Add("@IdVehiculo", SqlDbType.Int).Value = entidad.IdVehiculo;
                 Command.Parameters.Add("@Placa", SqlDbType.NChar, 7).Value = entidad.Placa;
                 Command.Parameters.Add("@IdTipoVehiculo", SqlDbType.Int).Value = entidad.IdTipoVehiculo;
-              
+
 
                 try
                 {
@@ -43,8 +43,6 @@ namespace DALL.Repositorios
                 }
             }
         }
-
-        
 
         public bool Crear(Vehiculo entidad)
         {
@@ -71,10 +69,6 @@ namespace DALL.Repositorios
                 }
             }
         }
-
-
-
-
 
         public bool Eliminar(int id)
         {
@@ -121,7 +115,7 @@ namespace DALL.Repositorios
                                 IdVehiculo = reader.GetInt32(0),
                                 Placa = reader.GetString(1).Trim(),
                                 IdTipoVehiculo = reader.GetInt32(2),
-                                
+
                             };
                             listaVehiculos.Add(vehiculo);
                         }
@@ -145,11 +139,12 @@ namespace DALL.Repositorios
 
             using (var Command = ConnectDB.CreateCommand())
             {
-                Command.CommandText = "SELECT IdVehiculo, Placa, IdTipoVehiculo " +
+                Command.CommandText = "SELECT IdVehiculo, Placa, IdTipoVehiculo, Tarifa " +
                                       "FROM Vehiculos " +
                                       "WHERE Placa LIKE @TextoBusqueda " +
                                       "OR CAST(IdVehiculo AS NVARCHAR) LIKE @TextoBusqueda " +
-                                      "OR CAST(IdTipoVehiculo AS NVARCHAR) LIKE @TextoBusqueda";
+                                      "OR CAST(IdTipoVehiculo AS NVARCHAR) LIKE @TextoBusqueda " +
+                                      "OR CAST(Tarifa AS NVARCHAR) LIKE @TextoBusqueda";
 
                 Command.Parameters.Add("@TextoBusqueda", SqlDbType.NVarChar).Value = "%" + textoBusqueda + "%";
 
@@ -164,7 +159,8 @@ namespace DALL.Repositorios
                             {
                                 IdVehiculo = reader.GetInt32(reader.GetOrdinal("IdVehiculo")),
                                 Placa = reader.GetString(reader.GetOrdinal("Placa")),
-                                IdTipoVehiculo = reader.GetInt32(reader.GetOrdinal("IdTipoVehiculo"))
+                                IdTipoVehiculo = reader.GetInt32(reader.GetOrdinal("IdTipoVehiculo")),
+                                Tarifa = reader.GetDecimal(reader.GetOrdinal("Tarifa"))
                             };
                             listaVehiculos.Add(vehiculo);
                         }
@@ -181,8 +177,6 @@ namespace DALL.Repositorios
                 }
             }
             return listaVehiculos;
-
-
         }
 
         public List<Vehiculo> FiltrarVehiculo(string textoBusqueda)
@@ -190,4 +184,5 @@ namespace DALL.Repositorios
             throw new NotImplementedException();
         }
     }
+
 }

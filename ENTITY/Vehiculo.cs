@@ -36,6 +36,6 @@ namespace ENTITY
         public int IdVehiculo { get; set; }
         public string Placa { get; set; }
         public int IdTipoVehiculo { get; set; }
-        
+        public decimal Tarifa { get; set; }
     }
 }
