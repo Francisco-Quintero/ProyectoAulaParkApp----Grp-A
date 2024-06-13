@@ -1,20 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ENTITY
 {
     public class Ticket
     {
-        public int id { get; set; }
-        public DateTime horaEmitido { get; set; }
+        public int IdTicket { get; set; }
+        public DateTime HoraEmititido { get; set; }
+        public bool Estado { get; set; }
+        public string Descripcion { get; set; }
+        public int IdPersona { get; set; }
 
-        public Ticket(int id, DateTime horaEmitido)
+        public Ticket(int idTicket, DateTime horaEmititido, bool estado, string descripcion, int idPersona)
         {
-            this.id = id;
-            this.horaEmitido = horaEmitido;
+            IdTicket = idTicket;
+            HoraEmititido = horaEmititido;
+            Estado = estado;
+            Descripcion = descripcion;
+            IdPersona = idPersona;
+        }
+
+        public Ticket()
+        {
         }
     }
 }

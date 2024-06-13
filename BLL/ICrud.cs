@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Class1
+    interface ICrud<T>
     {
+        bool Crear(T entidad);
+
+        bool Actualizar(T entidad);
+
+        bool Eliminar(int id);
+
+        List<T> Listar();
     }
 }

@@ -8,13 +8,34 @@ namespace ENTITY
 {
     public class Vehiculo
     {
-        private string placa { get; set; }
-        private string tipoVehiculo { get; set; }
 
-        public Vehiculo(string placa, string tipoVehiculo)
+        public Vehiculo()
         {
-            this.placa = placa;
-            this.tipoVehiculo = tipoVehiculo;
+            
         }
+
+        public Vehiculo(string placa)
+        { 
+          
+            Placa = placa;
+      
+        
+        }
+
+        public Vehiculo(int idVehiculo, string placa, int idTipoVehiculo)
+        {
+            IdVehiculo = idVehiculo;
+            Placa = placa;
+            IdTipoVehiculo = idTipoVehiculo;
+            
+        }
+
+       
+
+
+        public int IdVehiculo { get; set; }
+        public string Placa { get; set; }
+        public int IdTipoVehiculo { get; set; }
+        public decimal Tarifa { get; set; }
     }
 }

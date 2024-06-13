@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DALL
+namespace DALL.Interfaces
 {
-    public class Class1
+    internal interface IRepositorioTicket<T>
     {
+        bool Crear(T entidad);
+        List<T> Listar();
     }
 }
